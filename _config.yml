@@ -7,6 +7,5 @@ navigation:
     url: /
   - title: Example
     url: example
-
-  - Plot:
+  - title: Plot
     url: plot
