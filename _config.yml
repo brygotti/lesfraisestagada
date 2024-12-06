@@ -9,3 +9,5 @@ navigation:
     url: example
   - title: Plot
     url: plot
+  - title: Map
+    url: map
