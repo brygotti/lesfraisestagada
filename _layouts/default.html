@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" href="{{ '/assets/img/favicon/favicon-96x96.png' | relative_url }}" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon/favicon.svg' | relative_url }}" />
+    <link rel="shortcut icon" href="{{ '/assets/img/favicon/favicon.ico' | relative_url }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/favicon/apple-touch-icon.png' | relative_url }}" />
+    <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}" />
 
     <title>{{ site.title }}</title>
 
@@ -17,14 +17,14 @@
 
     <script src="https://unpkg.com/lunr/lunr.js"></script>
     
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
   </head>
   <body>
     <!-- Top navigation bar -->
     <nav class="navbar sticky-top navbar-expand-md bg-dark border-bottom border-body" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <img src="/assets/img/icon.png" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
+        <a class="navbar-brand" href="{{ '/' | relative_url }}">
+          <img src="{{ '/assets/img/icon.png' | relative_url }}" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -32,16 +32,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/example">Example</a>
+              <a class="nav-link" href="{{ '/example' | relative_url }}">Example</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/map">Map</a>
+              <a class="nav-link" href="{{ '/map' | relative_url }}">Map</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/plot">Plot</a>
+              <a class="nav-link" href="{{ '/plot' | relative_url }}">Plot</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
