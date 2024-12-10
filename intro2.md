@@ -3,52 +3,8 @@ layout: default
 title: Introduction2
 ---
 
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Story About Biases</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        .content {
-            max-width: 800px;
-            text-align: center;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            color: #007acc;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        a {
-            color: #007acc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="content">
+<div class="two-columns">
+    <div class="box">
         <h1>A Story About Biases</h1>
         <p>
             Today, content on the internet is still mostly produced by Western societies 
@@ -57,6 +13,7 @@ title: Introduction2
             Interestingly, those same societies also produce most of the human knowledge, which we proxy as the number of citable publications 
             <a href="https://www.scimagojr.com/countryrank.php?year=2007&order=it&ord=desc#google_vignette" target="_blank">[3]</a>.
         </p>
+        <!-- style="color: #007acc;" -->
         <p>
             <a href="https://dlab.epfl.ch/wikispeedia/play/" target="_blank">Wikispeedia</a> is an online game built on 4604 Wikipedia articles from 2007 during which players are navigating from a given start to a target end article through the links contained in the articles.
         </p>
@@ -64,51 +21,7 @@ title: Introduction2
             In this project we intend to investigate players’ behaviors and their biases. More precisely, we ask if the way players play Wikispeedia is dependent on how knowledge is produced in the world? Or are they influenced by the Wikipedia graph, which is itself biased towards countries that produce the most knowledge?
         </p>
     </div>
-</body>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Story About Biases</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        .content {
-            max-width: 800px;
-            text-align: center;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            color: #007acc;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        a {
-            color: #007acc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="content">
+    <div class="box">
         <h1>What is the plan?</h1>
         <p>
             The first step will be to understand the relationship between the way players play Wikispeedia and the production of knowledge in the world.
@@ -123,5 +36,4 @@ title: Introduction2
             For precision on how exactly we implemented those methods, please refer to the section Data & Preprocessing. 
         </p>
     </div>
-</body>
-</html>
+</div>
