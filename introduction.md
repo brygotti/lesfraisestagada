@@ -1,0 +1,14 @@
+---
+layout: default
+title: Introduction
+---
+
+# A story about biases
+
+Today, content on the internet is still mostly produced by Western societies [1] [2]. Interestingly, those same societies also produce most of the human knowledge, which we proxy as the number of citable publications [3]. Wikispeedia is an online game built on 4604 Wikipedia articles from 2007 during which players are navigating from a given start to a target end article through the links contained in the articles. In this project we intend to investigate players’ behaviors and their biases. More precisely, we ask if the way players play Wikispeedia is dependent on how knowledge is produced in the world? Or are they influenced by the Wikipedia graph, which is itself biased towards countries that produce the most knowledge?
+
+## What is the plan?
+The first step will be to understand the relationship between the way players play Wikispeedia and the production of knowledge in the world.
+For this, we will compare two hypotheses, namely the “passive” and the “active” hypothesis. In the “passive” hypothesis, we assume that players “passively” play on a graph that is biased towards countries producing a lot of scientific knowledge. Thus, by removing the graph bias (i.e. by controlling for the number of articles per country, the number of links in and out of articles, balancing, propensity score matching, PageRank), there should be no bias anymore in the way players play. We consider that the Wikipedia graph is biased if it over or under represents some countries. On the other hand, the “active” hypothesis states that players “actively” add their own intrinsic biases when playing on that graph. A player bias can be defined as the inclination for or against one or several countries. By removing the graph bias, the player’s preference for some countries should still be visible. 
+
+To succeed in this quest we are obliged to meet certain requirements. First, as we are working with a global database and as we intend to investigate worldwide geographical biases, we need to associate each article with a country.  Next, to quantify the players’ behavior in the game we will use their clicking patterns, more precisely the number of times each article is clicked. We then also added two features to each article, namely the number of links leading in and out of it. This will be of use in our analyses as those two variables might act as confounding factors for the players’ biases. Finally, as we are interested in showing how the production of scientific knowledge impacts players’ behavior, we need to match each of the previously defined countries to the number of publications produced within those countries during the year 2007. For precision on how exactly we implemented those methods, please refer to the section Data & Preprocessing. 
