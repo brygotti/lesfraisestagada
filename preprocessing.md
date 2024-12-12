@@ -2,17 +2,133 @@
 layout: default
 title: Data & Preprocessing
 ---
+<div class="row row-cols-1 row-cols-md-2">
 
-# Anatomy of the data
-https://github.com/Jeremmmyyyyy/ADA-Project-M1 → data description and structure
+<!-- # Anatomy of the data
+https://github.com/Jeremmmyyyyy/ADA-Project-M1 → data description and structure -->
 
+
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-left">
+<div class="content p-4" markdown="1">
 
 # Country assignment 
-We started by using a naive approach by doing a text search and finding all the country string names inside the plaintext. The results were then parsed in a table containing as index the article name and as columns all the possible countries on earth along with the number of occurrences in the specific article. After this the top 2 countries per article were kept. This approach resulted in 1412 articles having no country assigned to them. By going manually through them we saw that with human intuition, some articles can be further classified to countries even if the country name is not explicitly mentioned in the text.
 
-Then talk about LLMs (latest work)
+<div class="alert alert-success">
+    <strong>First glance at the distribution of knowledge worldwide :</strong> 
+    - Assign a country to each article <br />
+    - Try different methods and see how many articles can be classified <br />
+    - Verify these classification with human annotation <br />
+    - Select the best method for further analysis of the dataset <br />
+</div>
 
-Plot 2 - Un plot cool pour montrer qu’elle méthode est plus efficace et cohérente. Maybe un boxplot comme ça 
+<div class="alert alert-warning">
+  <strong>Countries :</strong>
+  In order to classify countries we used the standard ISO list with 249 countries and the following distribution: <br />
+  - UN Members: 193 <br />
+  - UN Observer States: 2 <br />
+  - States With Partial Recognition: 2 <br />
+  - Inhabited Dependent Territories: 45 <br />
+  - Uninhabited Territories: 6 <br />
+  - Antarctica: 1 <br />
+</div>
+
+A naïve method was employed to classify articles to specific countries by performing a text search to identify occurrences of country names within the plaintext. This approach utilized basic regular expression matching to analyze the articles. However, it resulted in approximately 31% of the articles (1,412 out of 4,604) remaining unclassified, highlighting significant limitations.
+
+### Identified Issues with the Approach:
+1. **Over-classification on mentioned country names**: 
+   The presence of a country name in an article does not necessarily imply that the article belongs to that country. This assumption leads to inaccuracies in classification.
+
+2. **Lack of contextual understanding**: 
+   The text search method lacks the ability to discern the context in which a country name appears, resulting in potential misclassifications.
+
+3. **Observations**: 
+   A review of the articles revealed a lot of incorrect or missing classifications. For example:
+   - The article *13th Century* was misclassified under China due to mentions of events occurring there during that period, despite the article lacking any specific association with China.
+   - Conversely, the article *4-2-0*, which details a type of railroad in the United States, was left unclassified despite its clear association with that country.
+
+These findings show the limitations of the current text-matching methodology and highlight the need for a more robust, context-aware approach to accurately classify articles.
+
+</div>
+</div>
+</div>
+
+<div class="col mb-4">
+<iframe class="graph" src="{{ '/graphs/proportion_country_assignment.html' | relative_url }}" ></iframe>
+</div>
+
+<div class="col mb-4">
+<iframe class="graph" src="{{ '/graphs/overlap_heatmap.html' | relative_url }}" ></iframe>
+</div>
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-right">
+<div class="content p-4" markdown="1">
+
+Given the limitations of the initial text-search-based approach, a decision was made to use Large Language Models (LLMs) to enhance the article classification process. LLMs, with their extensive general knowledge, have the capability to analyze articles and respond to queries with a deeper understanding. 
+
+Unlike simple text searches, LLMs not only utilize the content of the article but also incorporate their pre-existing (trained) knowledge. This contextual understanding should enables more accurate classification.
+
+By employing LLMs, two potential strategies can be pursued:
+1. **Targeted classification of previously unclassified articles**: The 1,412 articles that remained unclassified under the initial approach can be reevaluated, allowing for a significant reduction in the unclassified proportion. After this step only 6% (283 out of 4604) were not classified.
+
+2. **Full Reclassification**: LLMs can be used to perform a complete reclassification of all articles, eliminating the biases and limitations inherent in the original text-search methodology. In order to test this two existing LLMs were used : [LLaMa](https://www.llama.com/) and [Qwen](https://qwen-ai.com/). These powerful models, with less than 8 billion parameters, offer significant computational efficiency and can be run locally on consumer hardware, making them accessible and cost-effective solutions compared to bigger models like ChatGPT and their paid API.
+
+This transition to LLM-based classification is expected to significantly improve the accuracy and reliability of the country assignment process.
+
+The prompt used in order to make the models classify the articles was the following : 
+
+```
+You will be given textual articles. For each article provide a single and unique country to which the article is related and should be classified to. Provide the answer in the form : country.
+If there is no country related to the article, please write 'None'. 
+If the location is not on earth, please write 'None'. 
+If the article is a general article where the content is not specifically related to a country, please write 'None'.
+You must be 100\% sure this is a question of life.
+This is the list of coutnries that you are allowed to output don't output anything that is not in this list: {countries}
+```
+</div>
+</div>
+</div>
+
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-right">
+<div class="content p-4" markdown="1">
+
+To test the accuracy of the model’s predictions compared to human judgment, each member of the group manually annotated 20 articles, with a 10-article overlap between annotators. As a result, each article was annotated by two members, yielding a total of 50 annotations. Among these, 36 annotations matched, resulting in an inter-annotator agreement of 72%. This annotated subset was used as a benchmark to evaluate various classification methods and establish an agreement metric.
+
+The highest agreement with human annotations (72%) was achieved using the "Full Classification with LLaMa." However, a review of the assignments revealed that an excessively high number of articles (90%) were being classified, leading to potential overclassification.
+
+To address this, the system prompt was iteratively refined to enhance agreement accuracy. After achieving improved agreement values, the refined prompt was used to reclassify the entire dataset.
+
+The improved prompt is : 
+
+```
+You will be given textual articles. For each article provide a single and unique country to which the article is related and should be classified to. Provide the answer in the form : country. 
+If the article is related to an object, a place, a monument related to a country, please write the country.
+if the article is about a spieces, that lives in multiple countries, please write 'None'.
+If there is no country related to the article, please write 'None'. 
+If the location is not on earth, please write 'None'. 
+If the article is a general article where the content is not specifically related to a country, please write 'None'.
+You are allowed to use the article name to help you find the country.
+This is the list of coutnries that you are allowed to output don't output anything that is not in this list: {countries}
+```
+
+This refinement resulted in an improved agreement value of 86% while reducing the proportion of classified articles to 71%, addressing the issue of overclassification.
+This final classification is then used for the whole project.
+
+### Downsides and limitations : 
+- **Limited number of annotated articles** : The analysis was based on a relatively small sample of 36 annotated articles, which may result in imprecise agreement values. To improve the accuracy and reliability of the findings, a larger dataset of annotated articles would be necessary. However, due to time constraints, expanding the dataset or engaging additional human annotators was not feasible.
+- **Small size of LLM** : The model used in this study was relatively small, which inherently limits its knowledge and performance. While larger language models are expected to perform better on such tasks, the decision to prioritize local execution and cost-effectiveness constrained the use of more powerful models.
+
+</div>
+</div>
+</div>
+
+<div class="col mb-4">
+<iframe class="graph" src="{{ '/graphs/agreement_bar_plot.html' | relative_url }}" ></iframe>
+</div>
 
 
 # Assessment of article connectivity
