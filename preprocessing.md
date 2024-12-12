@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Data&Preprocessing
+title: Data & Preprocessing
 ---
 
 # Anatomy of the data

@@ -1,13 +1,38 @@
 ---
 layout: default
-title: Home
+title: Introduction
 ---
-# ADA Template Website
-## Usage
-1. Fork (copy) this repository by clicking the "Fork" button on the top right corner.
-2. Go to "Settings" -> "Pages" in your forked repository. Under "Branch" change "None" to "master" and click "Save".
-3. Edit the `_config.yml` file in your forked repository to change the site title (after `title:`) and description (after `description:`).
-4. Build your own page by editing this `README.md` (home page) and creating new `.md` files (other pages), formatting is done with standard [GitHub Markdown syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax), we provide an example file `example.md` in the repository.
-**Important**: Please include ```--- layout: default ---``` (the first three line in `example.md`) at the beginning of your every newly created `.md` file.
-5. Add your new `.md` files to the site by editing the `_config.yml` file in your forked repository. Under `navigation:` add a new pair of `- title:` and `url:`, and fill their value with your page name and `.md` file name. Remember to remove the `- title:` and `url:` pair for the example page.
-6. Go back to "Settings" -> "Pages" to find your website link.
+
+<div class="row row-cols-1 row-cols-md-2">
+
+<div class="col mb-4">
+<iframe class="graph" src="{{ '/graphs/interactive_publication_map.html' | relative_url }}" ></iframe>
+</div>
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-left">
+<div class="content p-4" markdown="1">
+### A story about biases
+
+Today, content on the internet is still mostly produced by Western societies [1](https://upload.wikimedia.org/wikipedia/commons/4/4a/Decolonizing_Wikipedia.pdf) [2](https://www.theguardian.com/commentisfree/2017/oct/05/internet-white-western-google-wikipedia-skewed#:~:text=of%20the%20world.-,For%20the%20first%20time%20in%20history%2C%20we%20are%20creating%20a,skewed%20towards%20rich%2C%20western%20countries.). Interestingly, those same societies also produce most of the human knowledge, which we proxy as the number of citable publications [3](https://www.scimagojr.com/countryrank.php?year=2007&order=it&ord=desc#google_vignette). [Wikispeedia](https://dlab.epfl.ch/wikispeedia/play/) is an online game built on 4604 Wikipedia articles from 2007 during which players are navigating from a given start to a target end article through the links contained in the articles. In this project we intend to investigate players’ behaviors and their biases. More precisely, we ask if the way players play Wikispeedia is dependent on how knowledge is produced in the world? Or are they influenced by the Wikipedia graph, which is itself biased towards countries that produce the most knowledge?
+</div>
+</div>
+</div>
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-right">
+<div class="content p-4" markdown="1">
+### What is the plan?
+The first step will be to understand the relationship between the way players play Wikispeedia and the production of knowledge in the world.
+For this, we will compare two hypotheses, namely the “passive” and the “active” hypothesis. In the “passive” hypothesis, we assume that players “passively” play on a graph that is biased towards countries producing a lot of scientific knowledge. Thus, by removing the graph bias (i.e. by controlling for the number of articles per country, the number of links in and out of articles, balancing, propensity score matching, PageRank), there should be no bias anymore in the way players play. We consider that the Wikipedia graph is biased if it over or under represents some countries. On the other hand, the “active” hypothesis states that players “actively” add their own intrinsic biases when playing on that graph. A player bias can be defined as the inclination for or against one or several countries. By removing the graph bias, the player’s preference for some countries should still be visible. 
+
+To succeed in this quest we are obliged to meet certain requirements. First, as we are working with a global database and as we intend to investigate worldwide geographical biases, we need to associate each article with a country.  Next, to quantify the players’ behavior in the game we will use their clicking patterns, more precisely the number of times each article is clicked. We then also added two features to each article, namely the number of links leading in and out of it. This will be of use in our analyses as those two variables might act as confounding factors for the players’ biases. Finally, as we are interested in showing how the production of scientific knowledge impacts players’ behavior, we need to match each of the previously defined countries to the number of publications produced within those countries during the year 2007. For precision on how exactly we implemented those methods, please refer to the section Data & Preprocessing.
+</div>
+</div>
+</div>
+
+<div class="col mb-4">
+<iframe class="graph" src="{{ '/graphs/test_plt.html' | relative_url }}" ></iframe>
+</div>
+
+</div>
