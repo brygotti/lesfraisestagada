@@ -16,7 +16,7 @@ https://github.com/Jeremmmyyyyy/ADA-Project-M1 → data description and structur
 # Country assignment 
 
 <div class="alert alert-success">
-    <strong>First glance at the distribution of knowledge worldwide :</strong> 
+    <strong>First glance at the distribution of knowledge worldwide :</strong> <br />
     - Assign a country to each article <br />
     - Try different methods and see how many articles can be classified <br />
     - Verify these classification with human annotation <br />
@@ -130,6 +130,9 @@ This final classification is then used for the whole project.
 <iframe class="graph" src="{{ '/graphs/agreement_bar_plot.html' | relative_url }}" ></iframe>
 </div>
 
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-right">
+<div class="content p-4" markdown="1">
 
 # Assessment of article connectivity
 Articles do not exist alone in Wikipedia. Indeed, they are all, to a certain extent, connected to each other through the links that they contain. To assess an article’s connectivity we calculated the number of links that lead in and out of it, respectively referred to as *num_links_in* and *num_links_out*. To find the number of links out of an article we simply counted the number of links contained in that article (24 in the example below). To find to number of links that lead into an article, we counted the number of times that article occurs in other articles (for example, North America appears in the example article below so this makes +1 to the *num_links_in count* of the North America article). 
@@ -144,3 +147,8 @@ As a reminder, a *path* corresponds to the sequence of articles that a player cl
 
 
 # Quantification of knowledge production 
+</div>
+</div>
+</div>
+
+</div>
