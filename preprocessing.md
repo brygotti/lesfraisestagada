@@ -10,10 +10,10 @@ https://github.com/Jeremmmyyyyy/ADA-Project-M1 → data description and structur
 
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-left">
+<div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
-# Country assignment 
+#### Country assignment 
 
 <div class="alert alert-success">
     <strong>First glance at the distribution of knowledge worldwide :</strong> <br />
@@ -36,7 +36,7 @@ https://github.com/Jeremmmyyyyy/ADA-Project-M1 → data description and structur
 
 A naïve method was employed to classify articles to specific countries by performing a text search to identify occurrences of country names within the plaintext. This approach utilized basic regular expression matching to analyze the articles. However, it resulted in approximately 31% of the articles (1,412 out of 4,604) remaining unclassified, highlighting significant limitations.
 
-### Identified Issues with the Approach:
+#### Identified Issues with the Approach
 1. **Over-classification on mentioned country names**: 
    The presence of a country name in an article does not necessarily imply that the article belongs to that country. This assumption leads to inaccuracies in classification.
 
@@ -55,7 +55,7 @@ These findings show the limitations of the current text-matching methodology and
 </div>
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-right">
+<div class="card shadow" data-aos="fade-up">
 <div class="content p-4">
 <iframe class="graph" src="{{ '/graphs/proportion_country_assignment.html' | relative_url }}" ></iframe>
 </div>
@@ -63,7 +63,7 @@ These findings show the limitations of the current text-matching methodology and
 </div>
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-right">
+<div class="card shadow" data-aos="fade-up">
 <div class="content p-4">
 <iframe class="graph" src="{{ '/graphs/overlap_heatmap.html' | relative_url }}" ></iframe>
 </div>
@@ -71,7 +71,7 @@ These findings show the limitations of the current text-matching methodology and
 </div>
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-right">
+<div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
 Given the limitations of the initial text-search-based approach, a decision was made to use Large Language Models (LLMs) to enhance the article classification process. LLMs, with their extensive general knowledge, have the capability to analyze articles and respond to queries with a deeper understanding. 
@@ -101,7 +101,7 @@ This is the list of coutnries that you are allowed to output don't output anythi
 
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-left">
+<div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
 To test the accuracy of the model’s predictions compared to human judgment, each member of the group manually annotated 20 articles, with a 10-article overlap between annotators. As a result, each article was annotated by two members, yielding a total of 50 annotations. Among these, 36 annotations matched, resulting in an inter-annotator agreement of 72%. This annotated subset was used as a benchmark to evaluate various classification methods and establish an agreement metric.
@@ -126,7 +126,7 @@ This is the list of coutnries that you are allowed to output don't output anythi
 This refinement resulted in an improved agreement value of 86% while reducing the proportion of classified articles to 71%, addressing the issue of overclassification.
 This final classification is then used for the whole project.
 
-### Downsides and limitations : 
+#### Downsides and limitations
 - **Limited number of annotated articles** : The analysis was based on a relatively small sample of 36 annotated articles, which may result in imprecise agreement values. To improve the accuracy and reliability of the findings, a larger dataset of annotated articles would be necessary. However, due to time constraints, expanding the dataset or engaging additional human annotators was not feasible.
 - **Small size of LLM** : The model used in this study was relatively small, which inherently limits its knowledge and performance. While larger language models are expected to perform better on such tasks, the decision to prioritize local execution and cost-effectiveness constrained the use of more powerful models.
 
@@ -135,7 +135,7 @@ This final classification is then used for the whole project.
 </div>
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-right">
+<div class="card shadow" data-aos="fade-up">
 <div class="content p-4">
 <iframe class="graph" src="{{ '/graphs/agreement_bar_plot.html' | relative_url }}" ></iframe>
 </div>
@@ -143,14 +143,14 @@ This final classification is then used for the whole project.
 </div>
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-right">
+<div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
-# Assessment of article connectivity
+#### Assessment of article connectivity
 Articles do not exist alone in Wikipedia. Indeed, they are all, to a certain extent, connected to each other through the links that they contain. To assess an article’s connectivity we calculated the number of links that lead in and out of it, respectively referred to as *num_links_in* and *num_links_out*. To find the number of links out of an article we simply counted the number of links contained in that article (24 in the example below). To find to number of links that lead into an article, we counted the number of times that article occurs in other articles (for example, North America appears in the example article below so this makes +1 to the *num_links_in count* of the North America article). 
 
 
-# Quantification of players’ behavior
+#### Quantification of players’ behavior
 To quantify the player’s behavior in the Wikispeedia game, we are interested in the way they *use* articles, meaning that we want to see if some articles are more *used* in the process of retrieving a target article from a source article. To quantify the *usage* of an article, we utilize the number of times an article is clicked (referred to as *click count* in our work). To calculate the *click count* per article we count the number of occurrences of an article in both finished and unfinished paths. 
 
 $$Click Count_{article} = \sum_{p=1}^{P} Occurrences_{article, p}$$
@@ -158,7 +158,7 @@ $$Click Count_{article} = \sum_{p=1}^{P} Occurrences_{article, p}$$
 As a reminder, a *path* corresponds to the sequence of articles that a player clicks in order to go from a given source article to a set target article. With our *click count* metric we can proxy article usage quite accurately. The higher the *click count* of an article, the more players used it and the bigger is the importance of this article (which importance does this correspond to? This we will find out!). 
 
 
-# Quantification of knowledge production 
+#### Quantification of knowledge production 
 </div>
 </div>
 </div>

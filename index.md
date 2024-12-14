@@ -6,7 +6,7 @@ title: Introduction
 <div class="row row-cols-1">
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-right">
+<div class="card shadow" data-aos="fade-up">
 <div class="content p-4">
 <iframe class="graph" src="{{ '/graphs/interactive_publication_map.html' | relative_url }}" ></iframe>
 </div>
@@ -14,9 +14,9 @@ title: Introduction
 </div>
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-left">
+<div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
-### A story about biases
+#### A story about biases
 
 Today, content on the internet is still mostly produced by Western societies [1](https://upload.wikimedia.org/wikipedia/commons/4/4a/Decolonizing_Wikipedia.pdf) [2](https://www.theguardian.com/commentisfree/2017/oct/05/internet-white-western-google-wikipedia-skewed#:~:text=of%20the%20world.-,For%20the%20first%20time%20in%20history%2C%20we%20are%20creating%20a,skewed%20towards%20rich%2C%20western%20countries.). Interestingly, those same societies also produce most of the human knowledge, which we proxy as the number of citable publications [3](https://www.scimagojr.com/countryrank.php?year=2007&order=it&ord=desc#google_vignette). [Wikispeedia](https://dlab.epfl.ch/wikispeedia/play/) is an online game built on 4604 Wikipedia articles from 2007 during which players are navigating from a given start to a target end article through the links contained in the articles. In this project we intend to investigate players’ behaviors and their biases. More precisely, we ask if the way players play Wikispeedia is dependent on how knowledge is produced in the world? Or are they influenced by the Wikipedia graph, which is itself biased towards countries that produce the most knowledge?
 </div>
@@ -24,9 +24,9 @@ Today, content on the internet is still mostly produced by Western societies [1]
 </div>
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-right">
+<div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
-### What is the plan?
+#### What is the plan?
 The first step will be to understand the relationship between the way players play Wikispeedia and the production of knowledge in the world.
 For this, we will compare two hypotheses, namely the “passive” and the “active” hypothesis. In the “passive” hypothesis, we assume that players “passively” play on a graph that is biased towards countries producing a lot of scientific knowledge. Thus, by removing the graph bias (i.e. by controlling for the number of articles per country, the number of links in and out of articles, balancing, propensity score matching, PageRank), there should be no bias anymore in the way players play. We consider that the Wikipedia graph is biased if it over or under represents some countries. On the other hand, the “active” hypothesis states that players “actively” add their own intrinsic biases when playing on that graph. A player bias can be defined as the inclination for or against one or several countries. By removing the graph bias, the player’s preference for some countries should still be visible. 
 
@@ -36,7 +36,7 @@ To succeed in this quest we are obliged to meet certain requirements. First, as 
 </div>
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-right">
+<div class="card shadow" data-aos="fade-up">
 <div class="content p-4">
 <iframe class="graph" src="{{ '/graphs/test_plt.html' | relative_url }}" ></iframe>
 </div>
