@@ -2,7 +2,7 @@
 layout: default
 title: Data & Preprocessing
 ---
-<div class="row row-cols-1 row-cols-md-2">
+<div class="row row-cols-1">
 
 <!-- # Anatomy of the data
 https://github.com/Jeremmmyyyyy/ADA-Project-M1 → data description and structure -->
@@ -55,11 +55,19 @@ These findings show the limitations of the current text-matching methodology and
 </div>
 
 <div class="col mb-4">
+<div class="card shadow" data-aos="fade-right">
+<div class="content p-4">
 <iframe class="graph" src="{{ '/graphs/proportion_country_assignment.html' | relative_url }}" ></iframe>
+</div>
+</div>
 </div>
 
 <div class="col mb-4">
+<div class="card shadow" data-aos="fade-right">
+<div class="content p-4">
 <iframe class="graph" src="{{ '/graphs/overlap_heatmap.html' | relative_url }}" ></iframe>
+</div>
+</div>
 </div>
 
 <div class="col mb-4">
@@ -93,7 +101,7 @@ This is the list of coutnries that you are allowed to output don't output anythi
 
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-right">
+<div class="card shadow" data-aos="fade-left">
 <div class="content p-4" markdown="1">
 
 To test the accuracy of the model’s predictions compared to human judgment, each member of the group manually annotated 20 articles, with a 10-article overlap between annotators. As a result, each article was annotated by two members, yielding a total of 50 annotations. Among these, 36 annotations matched, resulting in an inter-annotator agreement of 72%. This annotated subset was used as a benchmark to evaluate various classification methods and establish an agreement metric.
@@ -127,7 +135,11 @@ This final classification is then used for the whole project.
 </div>
 
 <div class="col mb-4">
+<div class="card shadow" data-aos="fade-right">
+<div class="content p-4">
 <iframe class="graph" src="{{ '/graphs/agreement_bar_plot.html' | relative_url }}" ></iframe>
+</div>
+</div>
 </div>
 
 <div class="col mb-4">

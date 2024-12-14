@@ -3,10 +3,14 @@ layout: default
 title: Introduction
 ---
 
-<div class="row row-cols-1 row-cols-md-2">
+<div class="row row-cols-1">
 
 <div class="col mb-4">
+<div class="card shadow" data-aos="fade-right">
+<div class="content p-4">
 <iframe class="graph" src="{{ '/graphs/interactive_publication_map.html' | relative_url }}" ></iframe>
+</div>
+</div>
 </div>
 
 <div class="col mb-4">
@@ -32,7 +36,11 @@ To succeed in this quest we are obliged to meet certain requirements. First, as 
 </div>
 
 <div class="col mb-4">
+<div class="card shadow" data-aos="fade-right">
+<div class="content p-4">
 <iframe class="graph" src="{{ '/graphs/test_plt.html' | relative_url }}" ></iframe>
+</div>
+</div>
 </div>
 
 </div>

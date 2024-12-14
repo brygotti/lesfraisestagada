@@ -22,12 +22,38 @@
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
   </head>
   <body>
+    {% if page.title == "Introduction" %}
+    <div
+      style="background-color: #061A2C;"
+    >
+      <div class="rellax" data-rellax-speed="-5" style="color: white; text-align: center; padding: 50px; padding-top: 70px">
+        <h1 class="">
+          {{ site.title }}
+        </h1>
+        <h2 class="pt-5">
+          Data story made in the context of the course
+          <a href="https://epfl-ada.github.io/" class="text-decoration-none">
+            <img style="width: 6rem" src="{{ '/assets/img/ada.png' | relative_url }}" />
+          </a>
+          at
+          <a href="https://www.epfl.ch/" class="text-decoration-none">
+            <img style="width: 10rem; margin-left: -0.5rem; margin-right: -0.5rem;" src="{{ '/assets/img/EPFL.png' | relative_url }}" />
+          </a>
+        </h2>
+      </div>
+    </div>
+    <div style="background-color: #061A2C; padding-left: 10vw; padding-right: 10vw;">
+      <img
+        class="rellax"
+        data-rellax-speed="-5"
+        src="{{ '/assets/img/parallax.webp' | relative_url }}"
+        style="width: 100%;"
+      />
+    </div>
+    {% endif %}
     <!-- Top navigation bar -->
-    <nav class="navbar sticky-top navbar-expand-md bg-dark border-bottom border-body" data-bs-theme="dark">
+    <nav class="navbar sticky-top navbar-expand-md bg-dark border-bottom border-body" data-bs-theme="dark" style="background-color: #061A2C !important;" >
       <div class="container-fluid">
-        <a class="navbar-brand" href="{{ '/' | relative_url }}">
-          <img src="{{ '/assets/img/icon.png' | relative_url }}" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
-        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -120,7 +146,7 @@
     </script>
 
     <!-- Page content -->
-    <div class="p-5">
+    <div class="page">
       {{ content }}
     </div>
 
@@ -128,6 +154,11 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script>
+      var rellax = new Rellax('.rellax');
     </script>
   </body>
 </html>
