@@ -148,32 +148,46 @@
     <!-- Page content -->
     <div class="page">
       {{ content }}
-    </div>
 
-    <div class="next-page-button text-center my-4">
-      {% assign current_page_index = nil %}
-      
-      <!-- Loop through navigation items to find the index of the current page -->
-      {% for item in site.navigation %}
-        {% if item.url == page.url %}
-          {% assign current_page_index = forloop.index0 %}
-        {% endif %}
-      {% endfor %}
-      
-      <!-- Check if current_page_index is set and display the next page button -->
-      {% if current_page_index != nil %}
-        {% assign next_index = current_page_index | plus: 1 %}
+      <div class="page-navigation-buttons text-center my-4">
+        {% assign current_page_index = nil %}
         
-        <!-- Ensure the next page exists in the navigation list -->
-        {% if next_index < site.navigation.size %}
-          {% assign next_page = site.navigation[next_index] %}
-            <a href="{{ next_page.url | relative_url }}" class="btn btn-secondary btn-lg">
-              Next: {{ next_page.title }}
+        <!-- Loop through navigation items to find the index of the current page -->
+        {% for item in site.navigation %}
+          {% if item.url == page.url %}
+            {% assign current_page_index = forloop.index0 %}
+          {% endif %}
+        {% endfor %}
+        
+        <!-- Display the Previous button -->
+        {% if current_page_index != nil %}
+          {% assign prev_index = current_page_index | minus: 1 %}
+          
+          <!-- Ensure the previous page exists in the navigation list -->
+          {% if prev_index >= 0 %}
+            {% assign prev_page = site.navigation[prev_index] %}
+            <a href="{{ prev_page.url | relative_url }}" class="btn btn-secondary btn-lg">
+              ⬅️ {{ prev_page.title }}
             </a>
-
+          {% endif %}
         {% endif %}
-      {% endif %}
+        
+        <!-- Display the Next button -->
+        {% if current_page_index != nil %}
+          {% assign next_index = current_page_index | plus: 1 %}
+          
+          <!-- Ensure the next page exists in the navigation list -->
+          {% if next_index < site.navigation.size %}
+            {% assign next_page = site.navigation[next_index] %}
+            <a href="{{ next_page.url | relative_url }}" class="btn btn-secondary btn-lg">
+              {{ next_page.title }} ➡️
+            </a>
+          {% endif %}
+        {% endif %}
+      </div>
     </div>
+
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
