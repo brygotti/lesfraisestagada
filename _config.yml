@@ -5,6 +5,6 @@ navigation:
   - title: Introduction
     url: /
   - title: Data & Preprocessing
-    url: /preprocessing
+    url: /preprocessing.html
   - title: Analysis
-    url: /analysis
+    url: /analysis.html

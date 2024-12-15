@@ -36,7 +36,7 @@ https://github.com/Jeremmmyyyyy/ADA-Project-M1 → data description and structur
 
 A naïve method was employed to classify articles to specific countries by performing a text search to identify occurrences of country names within the plaintext. This approach utilized basic regular expression matching to analyze the articles. However, it resulted in approximately 31% of the articles (1,412 out of 4,604) remaining unclassified, highlighting significant limitations.
 
-#### Identified Issues with the Approach
+### Identified Issues with the Approach:
 1. **Over-classification on mentioned country names**: 
    The presence of a country name in an article does not necessarily imply that the article belongs to that country. This assumption leads to inaccuracies in classification.
 
@@ -45,8 +45,8 @@ A naïve method was employed to classify articles to specific countries by perfo
 
 3. **Observations**: 
    A review of the articles revealed a lot of incorrect or missing classifications. For example:
-   - The article *13th Century* was misclassified under China due to mentions of events occurring there during that period, despite the article lacking any specific association with China.
-   - Conversely, the article *4-2-0*, which details a type of railroad in the United States, was left unclassified despite its clear association with that country.
+   - The article *13th Century* was missclassified under China due to mentions of events occurring there during that period, despite the article lacking any specific association with China.
+   - Conversely, the article *4-2-0*, which details a type of railroad in the United States, was left unclassified despite its clear appartenance to that country.
 
 These findings show the limitations of the current text-matching methodology and highlight the need for a more robust, context-aware approach to accurately classify articles.
 
@@ -54,21 +54,37 @@ These findings show the limitations of the current text-matching methodology and
 </div>
 </div>
 
-<div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content p-4">
-<iframe class="graph" src="{{ '/graphs/proportion_country_assignment.html' | relative_url }}" ></iframe>
-</div>
-</div>
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="col mb-4">
+      <div class="card shadow" data-aos="fade-up">
+      <div class="content p-4">
+      <iframe class="graph" src="{{ '/graphs/proportion_country_assignment.html' | relative_url }}" ></iframe>
+      </div>
+      </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="col mb-4">
+      <div class="card shadow" data-aos="fade-up">
+      <div class="content p-4">
+      <iframe class="graph" src="{{ '/graphs/overlap_heatmap.html' | relative_url }}" ></iframe>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
-<div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content p-4">
-<iframe class="graph" src="{{ '/graphs/overlap_heatmap.html' | relative_url }}" ></iframe>
-</div>
-</div>
-</div>
 
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
@@ -106,9 +122,9 @@ This is the list of coutnries that you are allowed to output don't output anythi
 
 To test the accuracy of the model’s predictions compared to human judgment, each member of the group manually annotated 20 articles, with a 10-article overlap between annotators. As a result, each article was annotated by two members, yielding a total of 50 annotations. Among these, 36 annotations matched, resulting in an inter-annotator agreement of 72%. This annotated subset was used as a benchmark to evaluate various classification methods and establish an agreement metric.
 
-The highest agreement with human annotations (72%) was achieved using the "Full Classification with LLaMa." However, a review of the assignments revealed that an excessively high number of articles (90%) were being classified, leading to potential overclassification.
+The highest agreement with human annotations (72%) was achieved using the "Full Classification with LLaMa." However, a review of the assignments revealed that an excessively high number of articles (90%) were being classified, leading to potential overclassification. Some articles were misclassified because the system prompt provided the model with a list of all countries. This introduced a bias, leading the model to disproportionately classify articles under Afghanistan, as it appears first alphabetically in the list.
 
-To address this, the system prompt was iteratively refined to enhance agreement accuracy. After achieving improved agreement values, the refined prompt was used to reclassify the entire dataset.
+To address this, the system prompt was iteratively refined to enhance agreement accuracy. After achieving improved agreement values, the refined prompt was used to reclassify the entire dataset. In order to remove the biases due to the ordering of countries in the list the classification was run 2 times with two different orders and then only the matching assignments were kept.
 
 The improved prompt is : 
 
@@ -123,10 +139,10 @@ You are allowed to use the article name to help you find the country.
 This is the list of coutnries that you are allowed to output don't output anything that is not in this list: {countries}
 ```
 
-This refinement resulted in an improved agreement value of 86% while reducing the proportion of classified articles to 71%, addressing the issue of overclassification.
+This refinement resulted in an improved agreement value of 78%% while reducing the proportion of classified articles to 56%, addressing the issue of overclassification. This proportion of classified articles matches our expectations and is possibly still a bit high since in our annotation 41% of articles were not classified.
 This final classification is then used for the whole project.
 
-#### Downsides and limitations
+### Downsides and limitations : 
 - **Limited number of annotated articles** : The analysis was based on a relatively small sample of 36 annotated articles, which may result in imprecise agreement values. To improve the accuracy and reliability of the findings, a larger dataset of annotated articles would be necessary. However, due to time constraints, expanding the dataset or engaging additional human annotators was not feasible.
 - **Small size of LLM** : The model used in this study was relatively small, which inherently limits its knowledge and performance. While larger language models are expected to perform better on such tasks, the decision to prioritize local execution and cost-effectiveness constrained the use of more powerful models.
 

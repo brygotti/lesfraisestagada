@@ -32,3 +32,8 @@
     .graph {
     }
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black; /* Sets the color of the arrows to black */
+}
