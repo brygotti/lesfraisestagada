@@ -17,9 +17,6 @@ title: Analysis
 </div>
 </div>
 
-<div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content p-4" markdown="1">
 
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
@@ -61,14 +58,8 @@ title: Analysis
   </button>
 </div>
 
-</div>
-</div>
-</div>
 
 
-<div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content p-4" markdown="1">
 
 <div class="btn-group">
   <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -133,9 +124,7 @@ title: Analysis
   });
 </script>
 
-</div>
-</div>
-</div>
+
 
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
