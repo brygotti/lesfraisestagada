@@ -11,7 +11,11 @@ title: Analysis
 
 #### Which countries are most represented in the Wikipedia graph?
 
-[TODO: write that]()
+Now that all (most) articles are associated to a country, we can look at the distribution of those countries. Is there a country that is associated to more articles? (we have our little idea haha but let's check). 
+
+We see that 8 countries make up for 1/2 of the articles in Wikipedia, namely the US, UK, Australia, France, Germany, Italy, India and China. Those are all in the top10 of countries that publish the most!!
+
+With Figure 1, we get a first intuition of the cultural bias that is present in the Wikipeedia graph: countries that publish most are also represented by more articles. When players play on this already biased graph, they will obviously click most on articles from those countries. So, later, when we analyze the behavior of the players, we will have to keep this in mind and normalize the click counts of the players by the number of articles per country! But this is for later, let's go on here!
 
 </div>
 </div>
@@ -26,6 +30,29 @@ title: Analysis
   </div>
 </div>
 
+<div class="row row-cols-1">
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content p-4" markdown="1">
+
+Let's now look at the connectivity between countries. 
+
+> Two countries are said to be *connected* if at least one article from the first country contains a link to an article associated to the other country, and the other way around for the 2 same articles.
+
+We contruct a graph of the Wikispeedia network overlayed with a world map for better visualization of the countries' importance. On this graph (bellow), we have: 
+- each node is a country 
+- the size and color of a node is proportional to the number of articles associtated to that node
+- edges represent connnections between countries in the Wikipedia graph
+
+With the slider on the top right part of the map we can select edges that occur more than a certain amount of times. We can see that edges that appear most (above 130 times) are those connecting countries that are associated to the most articles (e.g. USA, UK, France, Germany, Italy, India, Australia, China and Russia).
+
+We also see that those same countries are central hubs of the network. They are part of most edges and are also connected to most other countries. This makes sense since the more articles there are, the more out-links there are and ultimately the higher the chance to be referenced by other articles. 
+
+</div>
+</div>
+</div>
+
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
@@ -33,6 +60,23 @@ title: Analysis
     </div>
   </div>
 </div>
+
+<div class="row row-cols-1">
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content p-4" markdown="1">
+
+Lastly, let's look at the in and out degree of each country. 
+
+> **_NOTE:_**  The in degree of a country is defined as the sum of the in degrees of its articles. Same for out degrees. The higher the in degree of a country, the more central it is meaning that the more it is accessible from other countries. 
+
+We observe that countries that occur more often in Wikipedia (i.e. many articles are associated with those countries), are immensely more connected, so have much more links that lead in and out of them. Those articles are so called "central hubs" of the Wikipedia graph. 
+
+</div>
+</div>
+</div>
+
 
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
