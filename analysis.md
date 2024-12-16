@@ -18,45 +18,10 @@ title: Analysis
 </div>
 
 
-<div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="col mb-4">
-        <div class="card shadow" data-aos="fade-up">
-            <div class="content p-4">
-                <iframe class="graph" src="{{ '/graphs/topic_1/pie_plot_distribution_of_countries.html' | relative_url }}" ></iframe>
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="col mb-4">
-        <div class="card shadow" data-aos="fade-up">
-            <div class="content p-4">
-                <iframe class="graph" src="{{ '/graphs/topic_1/bar_plot_distribution_of_degrees.html' | relative_url }}" ></iframe>
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="col mb-4">
-        <div class="card shadow" data-aos="fade-up">
-            <div class="content p-4">
-                <iframe class="graph" src="{{ '/graphs/topic_1/country_graph.html' | relative_url }}" ></iframe>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+<figure class="figure">
+  <img src="graphs/topic_1/pie_plot_distribution_of_countries.html" class="figure-img img-fluid rounded" alt="...">
+  <figcaption class="figure-caption text-end">A caption for the above image.</figcaption>
+</figure>
 
 
 
