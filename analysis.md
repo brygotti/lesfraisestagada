@@ -18,77 +18,29 @@ title: Analysis
 </div>
 
 
-<figure class="figure">
-  <img src="graphs/topic_1/pie_plot_distribution_of_countries.html" class="figure-img img-fluid rounded" alt="...">
-  <figcaption class="figure-caption text-end">A caption for the above image.</figcaption>
-</figure>
-
-
-
-
-<div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Action
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#" id="action1">All</a></li>
-    <li><a class="dropdown-item" href="#" id="action2">Switzerland</a></li>
-    <li><a class="dropdown-item" href="#" id="action3">France</a></li>
-  </ul>
-</div>
-
-<!-- Plot 1 -->
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <iframe class="graph" src="{{ '/graphs/topic_1/country_graph.html' | relative_url }}"></iframe>
+      <iframe class="graph" src="{{ '/graphs/topic_1/pie_plot_distribution_of_countries.html' | relative_url }}"></iframe>
     </div>
   </div>
 </div>
 
-<!-- Plot 2 -->
-<div class="col mb-4" id="plot2" style="display: none;">
+<div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <iframe class="graph" src="{{ '/graphs/topic_1/country_graph_switzerland.html' | relative_url }}"></iframe>
+      <iframe class="graph" src="{{ '/graphs/topic_1/world_graph_map.html' | relative_url }}"></iframe>
     </div>
   </div>
 </div>
 
-<!-- Plot 3 -->
-<div class="col mb-4" id="plot3" style="display: none;">
+<div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <iframe class="graph" src="{{ '/graphs/topic_1/country_graph_france.html' | relative_url }}"></iframe>
+      <iframe class="graph" src="{{ '/graphs/topic_1/bar_plot_distribution_of_degrees.html' | relative_url }}"></iframe>
     </div>
   </div>
 </div>
-
-<script>
-  // Function to hide all plots
-  function hideAllPlots() {
-    document.getElementById("plot1").style.display = "none";
-    document.getElementById("plot2").style.display = "none";
-    document.getElementById("plot3").style.display = "none";
-  }
-
-  // Event listeners for dropdown actions
-  document.getElementById("action1").addEventListener("click", function() {
-    hideAllPlots();
-    document.getElementById("plot1").style.display = "block";  // Show plot 1
-  });
-
-  document.getElementById("action2").addEventListener("click", function() {
-    hideAllPlots();
-    document.getElementById("plot2").style.display = "block";  // Show plot 2
-  });
-
-  document.getElementById("action3").addEventListener("click", function() {
-    hideAllPlots();
-    document.getElementById("plot3").style.display = "block";  // Show plot 3
-  });
-</script>
-
 
 
 <div class="col mb-4">

@@ -1,6 +1,8 @@
 theme: jekyll-theme-minimal
 title: Analyzing cultural biases in Wikispeedia
 description: This is a project made in the context of the course "Applied Data Analysis" at EPFL. The goal of this project is to analyze cultural biases in Wikispeedia, a game where players navigate between Wikipedia articles by following hyperlinks.
+include:
+  - graphs
 navigation:
   - title: Introduction
     url: /
