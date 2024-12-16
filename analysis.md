@@ -150,7 +150,7 @@ But, can we rationally explain a differentially distributed click count? Is ther
       <div class="col mb-4">
       <div class="card shadow" data-aos="fade-up">
       <div class="content p-4">
-      <iframe class="graph" src="{{ '/graphs/world_counts_and_articles_after_scaling.html' | relative_url }}" ></iframe>
+      <iframe class="graph" src="{{ '/graphs/world_counts_and_articles_before_scaling.html' | relative_url }}" ></iframe>
       </div>
       </div>
       </div>
@@ -159,7 +159,7 @@ But, can we rationally explain a differentially distributed click count? Is ther
       <div class="col mb-4">
       <div class="card shadow" data-aos="fade-up">
       <div class="content p-4">
-      <iframe class="graph" src="{{ '/graphs/world_counts_and_articles_before_scaling.html' | relative_url }}" ></iframe>
+      <iframe class="graph" src="{{ '/graphs/world_counts_and_articles_after_scaling.html' | relative_url }}" ></iframe>
       </div>
       </div>
       </div>
