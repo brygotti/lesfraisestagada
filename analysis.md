@@ -108,22 +108,10 @@ But, can we rationally explain a differentially distributed click count? Is ther
 <div id="carouselWorld" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="col mb-4">
-      <div class="card shadow" data-aos="fade-up">
-      <div class="content p-4">
       <iframe class="graph" src="{{ '/graphs/world_counts_and_articles_before_scaling.html' | relative_url }}" ></iframe>
-      </div>
-      </div>
-      </div>
     </div>
     <div class="carousel-item">
-      <div class="col mb-4">
-      <div class="card shadow" data-aos="fade-up">
-      <div class="content p-4">
       <iframe class="graph" src="{{ '/graphs/world_counts_and_articles_after_scaling.html' | relative_url }}" ></iframe>
-      </div>
-      </div>
-      </div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselWorld" data-bs-slide="prev">
