@@ -54,35 +54,29 @@ These findings show the limitations of the current text-matching methodology and
 </div>
 </div>
 
-<div id="carouselExample" class="carousel slide">
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content">
+<div id="carouselCountry" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="col mb-4">
-      <div class="card shadow" data-aos="fade-up">
-      <div class="content p-4">
+    <div class="carousel-item active" style="height: 70vh">
       <iframe class="graph" src="{{ '/graphs/proportion_country_assignment.html' | relative_url }}" ></iframe>
-      </div>
-      </div>
-      </div>
     </div>
-    <div class="carousel-item">
-      <div class="col mb-4">
-      <div class="card shadow" data-aos="fade-up">
-      <div class="content p-4">
+    <div class="carousel-item" style="height: 70vh">
       <iframe class="graph" src="{{ '/graphs/overlap_heatmap.html' | relative_url }}" ></iframe>
-      </div>
-      </div>
-      </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselCountry" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselCountry" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -103,14 +97,15 @@ This transition to LLM-based classification is expected to significantly improve
 
 The prompt used in order to make the models classify the articles was the following : 
 
-```
-You will be given textual articles. For each article provide a single and unique country to which the article is related and should be classified to. Provide the answer in the form : country.
-If there is no country related to the article, please write 'None'. 
-If the location is not on earth, please write 'None'. 
-If the article is a general article where the content is not specifically related to a country, please write 'None'.
-You must be 100\% sure this is a question of life.
+<blockquote class="blockquote-content">
+You will be given textual articles. For each article provide a single and unique country to which the article is related and should be classified to. Provide the answer in the form : country.<br/>
+If there is no country related to the article, please write 'None'.<br/>
+If the location is not on earth, please write 'None'.<br/>
+If the article is a general article where the content is not specifically related to a country, please write 'None'.<br/>
+You must be 100\% sure this is a question of life.<br/>
 This is the list of coutnries that you are allowed to output don't output anything that is not in this list: {countries}
-```
+</blockquote>
+
 </div>
 </div>
 </div>
@@ -128,16 +123,16 @@ To address this, the system prompt was iteratively refined to enhance agreement 
 
 The improved prompt is : 
 
-```
-You will be given textual articles. For each article provide a single and unique country to which the article is related and should be classified to. Provide the answer in the form : country. 
-If the article is related to an object, a place, a monument related to a country, please write the country.
-if the article is about a spieces, that lives in multiple countries, please write 'None'.
-If there is no country related to the article, please write 'None'. 
-If the location is not on earth, please write 'None'. 
-If the article is a general article where the content is not specifically related to a country, please write 'None'.
-You are allowed to use the article name to help you find the country.
+<blockquote class="blockquote-content">
+You will be given textual articles. For each article provide a single and unique country to which the article is related and should be classified to. Provide the answer in the form : country.<br/>
+If the article is related to an object, a place, a monument related to a country, please write the country.<br/>
+if the article is about a spieces, that lives in multiple countries, please write 'None'.<br/>
+If there is no country related to the article, please write 'None'.<br/>
+If the location is not on earth, please write 'None'.<br/>
+If the article is a general article where the content is not specifically related to a country, please write 'None'.<br/>
+You are allowed to use the article name to help you find the country.<br/>
 This is the list of coutnries that you are allowed to output don't output anything that is not in this list: {countries}
-```
+</blockquote>
 
 This refinement resulted in an improved agreement value of 78%% while reducing the proportion of classified articles to 56%, addressing the issue of overclassification. This proportion of classified articles matches our expectations and is possibly still a bit high since in our annotation 41% of articles were not classified.
 This final classification is then used for the whole project.

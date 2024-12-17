@@ -9,9 +9,7 @@ title: Analysis
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
-#### A quick word about articles! 
-
-<br>
+#### A quick word about articles!
 
 As we said in the introduction, we want to associate each article to a country. But why does this actually make sense? Well, if we look at the two graphs below, we can see that almost all atricles among the top20 can be associated to a country (*e.g. English_language to England*). The same is true for the bottom20 articles (*e.g. Afghan hound to Afghanistan*). 
 
@@ -21,7 +19,10 @@ This motivates our decision to analyse the distributions of those countries with
 </div>
 </div>
 
-<div id="carouselWorld" class="carousel slide">
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content">
+<div id="carouselWorld" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <iframe class="graph" src="{{ 'graphs/topic_1/most_used_articles_graph.html' | relative_url }}" ></iframe>
@@ -39,16 +40,15 @@ This motivates our decision to analyse the distributions of those countries with
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
-<div class="row row-cols-1">
+</div>
+</div>
+</div>
 
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
 #### Which countries are most represented in the Wikipedia graph?
-
-<br>
 
 Now that all (most) articles are associated to a country, we can look at the distribution of those countries. Is there a country that is associated to more articles? (we have our little idea haha but let's check). 
 
@@ -69,15 +69,13 @@ With *Figure 1* , we get a first intuition of the cultural bias that is present 
   </div>
 </div>
 
-<div class="row row-cols-1">
-
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
 Let's now look at the connectivity between countries. 
 
-<blockquote style="background-color: #f9f9f9; padding: 10px; border-left: 5px solid #ccc;">
+<blockquote class="blockquote-content">
     Two countries are said to be <strong>connected</strong> if at least one article from the first country contains a link to an article associated to the other country.
 </blockquote>
 
@@ -102,15 +100,13 @@ We also see that those same countries are central hubs of the network. They are 
   </div>
 </div>
 
-<div class="row row-cols-1">
-
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
 Lastly, let's look at the in and out degree of each country. 
 
-<blockquote style="background-color: #f9f9f9; padding: 10px; border-left: 5px solid #ccc;">
+<blockquote class="blockquote-content">
     The <strong>in degree</strong> of a country is defined as the sum of the in degrees of its articles. Same for <strong>out degree</strong>. The higher the in degree of a country, the more central it is meaning that the more it is accessible from other countries. 
 </blockquote>
 
@@ -119,30 +115,6 @@ We observe that countries that occur more often in Wikipedia (i.e. many articles
 </div>
 </div>
 </div>
-
-<style>
-  /* Style for the iframe */
-  .graph {
-    width: 100%;   /* Make the iframe width 100% of the parent container */
-    height: 100%;  /* Make the iframe height 100% of the parent container */
-    border: none;  /* Remove any borders around the iframe */
-    object-fit: contain;  /* Ensures the entire graph fits without distorting */
-  }
-
-  /* Optional: Style for the parent container */
-  .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;  /* Ensure the parent div has a height */
-  }
-
-  /* Optional: Make sure content container fills the card */
-  .content {
-    width: 100%;
-    height: 100%;
-  }
-</style>
 
 
 <div class="col mb-4" id="plot1">
@@ -172,25 +144,16 @@ But, can we rationally explain a differentially distributed click count? Is ther
 </div>
 </div>
 
-<div id="World_click_count" class="carousel slide">
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content">
+<div id="World_click_count" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="col mb-4">
-      <div class="card shadow" data-aos="fade-up">
-      <div class="content p-4">
       <iframe class="graph" src="{{ '/graphs/world_click_counts_before_scaling.html' | relative_url }}" ></iframe>
-      </div>
-      </div>
-      </div>
     </div>
     <div class="carousel-item">
-      <div class="col mb-4">
-      <div class="card shadow" data-aos="fade-up">
-      <div class="content p-4">
       <iframe class="graph" src="{{ '/graphs/world_click_counts_after_scaling.html' | relative_url }}" ></iframe>
-      </div>
-      </div>
-      </div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#World_click_count" data-bs-slide="prev">
@@ -201,6 +164,9 @@ But, can we rationally explain a differentially distributed click count? Is ther
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+</div>
+</div>
 </div>
 
 <div class="col mb-4">

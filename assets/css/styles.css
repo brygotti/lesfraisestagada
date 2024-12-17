@@ -27,13 +27,23 @@
 .graph {
     width: 100%;
     min-height: 50vh;
-}
-@media (min-width: 768px) {
-    .graph {
-    }
+    height: 100%;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: black; /* Sets the color of the arrows to black */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px !important;
+}
+
+.carousel-inner {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.blockquote-content {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 5px solid #ccc;
 }

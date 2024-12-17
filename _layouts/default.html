@@ -154,7 +154,7 @@
         
         <!-- Loop through navigation items to find the index of the current page -->
         {% for item in site.navigation %}
-          {% if item.url == page.url %}
+          {% if item.title == page.title %}
             {% assign current_page_index = forloop.index0 %}
           {% endif %}
         {% endfor %}
@@ -166,7 +166,7 @@
           <!-- Ensure the previous page exists in the navigation list -->
           {% if prev_index >= 0 %}
             {% assign prev_page = site.navigation[prev_index] %}
-            <a href="{{ prev_page.url | relative_url }}" class="btn btn-secondary btn-lg">
+            <a href="{{ prev_page.url | relative_url }}" class="btn btn-secondary btn-lg" style="background-color: #061A2C;">
               ⬅️ {{ prev_page.title }}
             </a>
           {% endif %}
@@ -179,7 +179,7 @@
           <!-- Ensure the next page exists in the navigation list -->
           {% if next_index < site.navigation.size %}
             {% assign next_page = site.navigation[next_index] %}
-            <a href="{{ next_page.url | relative_url }}" class="btn btn-secondary btn-lg">
+            <a href="{{ next_page.url | relative_url }}" class="btn btn-secondary btn-lg" style="background-color: #061A2C;">
               {{ next_page.title }} ➡️
             </a>
           {% endif %}
