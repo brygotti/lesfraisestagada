@@ -64,6 +64,7 @@ With *Figure 1* , we get a first intuition of the cultural bias that is present 
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
+      <h4> Figure 1: Proportion of articles per country in Wikispeedia (2007)
       <iframe class="graph" src="{{ '/graphs/topic_1/pie_plot_distribution_of_countries.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -120,34 +121,11 @@ We observe that countries that occur more often in Wikipedia (i.e. many articles
 </div>
 </div>
 
-<style>
-  /* Style for the iframe */
-  .graph {
-    width: 100%;   /* Make the iframe width 100% of the parent container */
-    height: 100%;  /* Make the iframe height 100% of the parent container */
-    border: none;  /* Remove any borders around the iframe */
-    object-fit: contain;  /* Ensures the entire graph fits without distorting */
-  }
-
-  /* Optional: Style for the parent container */
-  .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;  /* Ensure the parent div has a height */
-  }
-
-  /* Optional: Make sure content container fills the card */
-  .content {
-    width: 100%;
-    height: 100%;
-  }
-</style>
-
 
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
+      <h4> Figure 2: Node degree of countries
       <iframe class="graph" src="{{ '/graphs/topic_1/bar_plot_distribution_of_degrees.html' | relative_url }}"></iframe>
     </div>
   </div>
