@@ -64,11 +64,12 @@ With *Figure 1* , we get a first intuition of the cultural bias that is present 
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <h4> Figure 1: Proportion of articles per country in Wikispeedia (2007)
+      <div class="graph-title"> Figure 2: Proportion of articles per country in Wikispeedia (2007) </div>
       <iframe class="graph" src="{{ '/graphs/topic_1/pie_plot_distribution_of_countries.html' | relative_url }}"></iframe>
     </div>
   </div>
 </div>
+
 
 <div class="row row-cols-1">
 
@@ -125,7 +126,7 @@ We observe that countries that occur more often in Wikipedia (i.e. many articles
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <h4> Figure 2: Node degree of countries
+      <div class="graph-title"> Figure 3: Node degree of countries </div>
       <iframe class="graph" src="{{ '/graphs/topic_1/bar_plot_distribution_of_degrees.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -156,7 +157,8 @@ But, can we rationally explain a differentially distributed click count? Is ther
       <div class="col mb-4">
       <div class="card shadow" data-aos="fade-up">
       <div class="content p-4">
-      <iframe class="graph" src="{{ '/graphs/world_click_counts_before_scaling.html' | relative_url }}" ></iframe>
+        <h6> Figure 2: Node degree of countries </h6>
+        <iframe class="graph" src="{{ '/graphs/world_click_counts_before_scaling.html' | relative_url }}" ></iframe>
       </div>
       </div>
       </div>

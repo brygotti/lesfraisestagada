@@ -37,3 +37,8 @@
 .carousel-control-next-icon {
   background-color: black; /* Sets the color of the arrows to black */
 }
+
+.graph-title {
+    color:midnightblue; 
+    font-size: 20px;
+}
