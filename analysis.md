@@ -54,7 +54,7 @@ Now that all (most) articles are associated to a country, we can look at the dis
 
 We see that 8 countries make up for <sup>1</sup>/<sub>2</sub> of the articles in Wikipedia, namely the **US**, **UK**, **Australia**, **France**, **Germany**, **Italy**, **India** and **China**. Those are all in the top10 of countries that publish the most!!
 
-With <strong>Figure 1</strong> , we get a first intuition of the cultural bias that is present in the Wikipeedia graph: countries that publish most are also represented by more articles. When players play on this already biased graph, they will obviously click most on articles from those countries. So, later, when we analyze the behavior of the players, we will have to keep this in mind and normalize the click counts of the players by the number of articles per country! But this is for later, let's go on here!
+With *Figure 1* , we get a first intuition of the cultural bias that is present in the Wikipeedia graph: countries that publish most are also represented by more articles. When players play on this already biased graph, they will obviously click most on articles from those countries. So, later, when we analyze the behavior of the players, we will have to keep this in mind and normalize the click counts of the players by the number of articles per country! But this is for later, let's go on here!
 
 </div>
 </div>
@@ -111,7 +111,7 @@ We also see that those same countries are central hubs of the network. They are 
 Lastly, let's look at the in and out degree of each country. 
 
 <blockquote style="background-color: #f9f9f9; padding: 10px; border-left: 5px solid #ccc;">
-    The **in degree** of a country is defined as the sum of the in degrees of its articles. Same for **out degrees**. The higher the in degree of a country, the more central it is meaning that the more it is accessible from other countries. 
+    The <strong>in degree</strong> of a country is defined as the sum of the in degrees of its articles. Same for <strong>out degree</strong>. The higher the in degree of a country, the more central it is meaning that the more it is accessible from other countries. 
 </blockquote>
 
 We observe that countries that occur more often in Wikipedia (i.e. many articles are associated with those countries), are immensely more connected, so have much more links that lead in and out of them. Those articles are so called "central hubs" of the Wikipedia graph. 
@@ -119,6 +119,30 @@ We observe that countries that occur more often in Wikipedia (i.e. many articles
 </div>
 </div>
 </div>
+
+<style>
+  /* Style for the iframe */
+  .graph {
+    width: 100%;   /* Make the iframe width 100% of the parent container */
+    height: 100%;  /* Make the iframe height 100% of the parent container */
+    border: none;  /* Remove any borders around the iframe */
+    object-fit: contain;  /* Ensures the entire graph fits without distorting */
+  }
+
+  /* Optional: Style for the parent container */
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;  /* Ensure the parent div has a height */
+  }
+
+  /* Optional: Make sure content container fills the card */
+  .content {
+    width: 100%;
+    height: 100%;
+  }
+</style>
 
 
 <div class="col mb-4" id="plot1">
