@@ -36,7 +36,7 @@ https://github.com/Jeremmmyyyyy/ADA-Project-M1 → data description and structur
 
 A naïve method was employed to classify articles to specific countries by performing a text search to identify occurrences of country names within the plaintext. This approach utilized basic regular expression matching to analyze the articles. However, it resulted in approximately 31% of the articles (1,412 out of 4,604) remaining unclassified, highlighting significant limitations.
 
-### Identified Issues with the Approach:
+#### Identified issues with the approach
 1. **Over-classification on mentioned country names**: 
    The presence of a country name in an article does not necessarily imply that the article belongs to that country. This assumption leads to inaccuracies in classification.
 
@@ -142,7 +142,7 @@ This is the list of coutnries that you are allowed to output don't output anythi
 This refinement resulted in an improved agreement value of 78%% while reducing the proportion of classified articles to 56%, addressing the issue of overclassification. This proportion of classified articles matches our expectations and is possibly still a bit high since in our annotation 41% of articles were not classified.
 This final classification is then used for the whole project.
 
-### Downsides and limitations : 
+#### Downsides and limitations
 - **Limited number of annotated articles** : The analysis was based on a relatively small sample of 36 annotated articles, which may result in imprecise agreement values. To improve the accuracy and reliability of the findings, a larger dataset of annotated articles would be necessary. However, due to time constraints, expanding the dataset or engaging additional human annotators was not feasible.
 - **Small size of LLM** : The model used in this study was relatively small, which inherently limits its knowledge and performance. While larger language models are expected to perform better on such tasks, the decision to prioritize local execution and cost-effectiveness constrained the use of more powerful models.
 
