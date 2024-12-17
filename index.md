@@ -11,6 +11,10 @@ title: Introduction
 #### A story about biases
 
 Today, content on the internet is still mostly produced by Western societies [[1]](https://upload.wikimedia.org/wikipedia/commons/4/4a/Decolonizing_Wikipedia.pdf) [[2]](https://www.theguardian.com/commentisfree/2017/oct/05/internet-white-western-google-wikipedia-skewed#:~:text=of%20the%20world.-,For%20the%20first%20time%20in%20history%2C%20we%20are%20creating%20a,skewed%20towards%20rich%2C%20western%20countries.). Interestingly, those same societies also produce most of the human knowledge, which we proxy as the number of citable publications [[3]](https://www.scimagojr.com/countryrank.php?year=2007&order=it&ord=desc#google_vignette). [Wikispeedia](https://dlab.epfl.ch/wikispeedia/play/) is an online game built on 4604 Wikipedia articles from 2007 during which players are navigating from a given start to a target end article through the links contained in the articles. In this project we intend to investigate how players navigate through the game and how this navigation is influenced by the production of scientific knowledge in the world. More precisely, we are interested in understanding whether players are attracted towards articles linked to countries producing a lot of scientific knowledge.
+
+#### Why does this make sense?
+As a small appetizer, let us throw a quick look at <a href="#" data-bs-toggle="tooltip" data-bs-title="Details on the data used to create these figures will be presented in the next section">figure 1 and 2</a>. We can already see the link between the two issues at hand: the distribution of articles per country in the Wikispeedia graph seems very closely related to the distribution of scientific knowledge production in the world. But how strong is this link? And how does it impact the players’ behavior in the game? Let's dive into the details to find out.
+
 </div>
 </div>
 </div>
@@ -21,11 +25,11 @@ Today, content on the internet is still mostly produced by Western societies [[1
 <div id="carouselIntro" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="graph-title"> Intro 1: Number of publications per country (2007) </div>
+      <div class="graph-title"> Figure 1: Number of publications per country (2007) </div>
       <iframe class="graph" src="{{ 'graphs/intro/publications_intro_map.html' | relative_url }}" ></iframe>
     </div>
     <div class="carousel-item">
-      <div class="graph-title"> Intro 2: Number of articles per country in Wikispeedia (2007) </div>
+      <div class="graph-title"> Figure 2: Number of articles per country in Wikispeedia (2007) </div>
       <iframe class="graph" src="{{ 'graphs/intro/articles_intro_map.html' | relative_url }}" ></iframe>
     </div>
   </div>
