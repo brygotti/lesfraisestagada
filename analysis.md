@@ -9,13 +9,52 @@ title: Analysis
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
+#### A quick word about articles! 
+
+<br>
+
+As we said in the introduction, we want to associate each article to a country. But why does this actually make sense? Well, if we look at the two graphs below, we can see that almost all atricles among the top20 can be associated to a country (*e.g. English_language to England*). The same is true for the bottom20 articles (*e.g. Afghan hound to Afghanistan*). 
+
+This motivates our decision to analyse the distributions of those countries within the Wikipedia graph. In the end, we are interested in whether players of the Wikispeedia game really tend to click more on articles that are associated with western countries or if this feature is due to the properties of the Wikipedia graph itself. 
+
+</div>
+</div>
+</div>
+
+<div id="carouselWorld" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <iframe class="graph" src="{{ 'graphs/topic_1/most_used_articles_graph.html' | relative_url }}" ></iframe>
+    </div>
+    <div class="carousel-item">
+      <iframe class="graph" src="{{ 'graphs/topic_1/least_used_articles_graph.html' | relative_url }}" ></iframe>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselWorld" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselWorld" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="row row-cols-1">
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content p-4" markdown="1">
+
 #### Which countries are most represented in the Wikipedia graph?
+
+<br>
 
 Now that all (most) articles are associated to a country, we can look at the distribution of those countries. Is there a country that is associated to more articles? (we have our little idea haha but let's check). 
 
-We see that 8 countries make up for 1/2 of the articles in Wikipedia, namely the US, UK, Australia, France, Germany, Italy, India and China. Those are all in the top10 of countries that publish the most!!
+We see that 8 countries make up for <sup>1</sup>/<sub>2</sub> of the articles in Wikipedia, namely the **US**, **UK**, **Australia**, **France**, **Germany**, **Italy**, **India** and **China**. Those are all in the top10 of countries that publish the most!!
 
-With Figure 1, we get a first intuition of the cultural bias that is present in the Wikipeedia graph: countries that publish most are also represented by more articles. When players play on this already biased graph, they will obviously click most on articles from those countries. So, later, when we analyze the behavior of the players, we will have to keep this in mind and normalize the click counts of the players by the number of articles per country! But this is for later, let's go on here!
+With <strong>Figure 1</strong> , we get a first intuition of the cultural bias that is present in the Wikipeedia graph: countries that publish most are also represented by more articles. When players play on this already biased graph, they will obviously click most on articles from those countries. So, later, when we analyze the behavior of the players, we will have to keep this in mind and normalize the click counts of the players by the number of articles per country! But this is for later, let's go on here!
 
 </div>
 </div>
@@ -38,7 +77,9 @@ With Figure 1, we get a first intuition of the cultural bias that is present in 
 
 Let's now look at the connectivity between countries. 
 
-> Two countries are said to be *connected* if at least one article from the first country contains a link to an article associated to the other country, and the other way around for the 2 same articles.
+<blockquote style="background-color: #f9f9f9; padding: 10px; border-left: 5px solid #ccc;">
+    Two countries are said to be <strong>connected</strong> if at least one article from the first country contains a link to an article associated to the other country, and the other way around for the 2 same articles.
+</blockquote>
 
 We contruct a graph of the Wikispeedia network overlayed with a world map for better visualization of the countries' importance. On this graph (bellow), we have: 
 - each node is a country 
@@ -69,7 +110,9 @@ We also see that those same countries are central hubs of the network. They are 
 
 Lastly, let's look at the in and out degree of each country. 
 
-> **_NOTE:_**  The in degree of a country is defined as the sum of the in degrees of its articles. Same for out degrees. The higher the in degree of a country, the more central it is meaning that the more it is accessible from other countries. 
+<blockquote style="background-color: #f9f9f9; padding: 10px; border-left: 5px solid #ccc;">
+    The **in degree** of a country is defined as the sum of the in degrees of its articles. Same for **out degrees**. The higher the in degree of a country, the more central it is meaning that the more it is accessible from other countries. 
+</blockquote>
 
 We observe that countries that occur more often in Wikipedia (i.e. many articles are associated with those countries), are immensely more connected, so have much more links that lead in and out of them. Those articles are so called "central hubs" of the Wikipedia graph. 
 

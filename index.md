@@ -3,22 +3,23 @@ layout: default
 title: Introduction
 ---
 
-<div class="row row-cols-1">
-
-<div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content p-4">
-<iframe class="graph" src="{{ '/graphs/interactive_publication_map.html' | relative_url }}" ></iframe>
-</div>
-</div>
-</div>
-
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 #### A story about biases
 
 Today, content on the internet is still mostly produced by Western societies [1](https://upload.wikimedia.org/wikipedia/commons/4/4a/Decolonizing_Wikipedia.pdf) [2](https://www.theguardian.com/commentisfree/2017/oct/05/internet-white-western-google-wikipedia-skewed#:~:text=of%20the%20world.-,For%20the%20first%20time%20in%20history%2C%20we%20are%20creating%20a,skewed%20towards%20rich%2C%20western%20countries.). Interestingly, those same societies also produce most of the human knowledge, which we proxy as the number of citable publications [3](https://www.scimagojr.com/countryrank.php?year=2007&order=it&ord=desc#google_vignette). [Wikispeedia](https://dlab.epfl.ch/wikispeedia/play/) is an online game built on 4604 Wikipedia articles from 2007 during which players are navigating from a given start to a target end article through the links contained in the articles. In this project we intend to investigate players’ behaviors and their biases. More precisely, we ask if the way players play Wikispeedia is dependent on how knowledge is produced in the world? Or are they influenced by the Wikipedia graph, which is itself biased towards countries that produce the most knowledge?
+</div>
+</div>
+</div>
+
+
+<div class="row row-cols-1">
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content p-4">
+<iframe class="graph" src="{{ '/graphs/interactive_publication_map.html' | relative_url }}" ></iframe>
 </div>
 </div>
 </div>
@@ -33,14 +34,4 @@ For this, we will compare two hypotheses, namely the “passive” and the “ac
 To succeed in this quest we are obliged to meet certain requirements. First, as we are working with a global database and as we intend to investigate worldwide geographical biases, we need to associate each article with a country.  Next, to quantify the players’ behavior in the game we will use their clicking patterns, more precisely the number of times each article is clicked. We then also added two features to each article, namely the number of links leading in and out of it. This will be of use in our analyses as those two variables might act as confounding factors for the players’ biases. Finally, as we are interested in showing how the production of scientific knowledge impacts players’ behavior, we need to match each of the previously defined countries to the number of publications produced within those countries during the year 2007. For precision on how exactly we implemented those methods, please refer to the section Data & Preprocessing.
 </div>
 </div>
-</div>
-
-<div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content p-4">
-<iframe class="graph" src="{{ '/graphs/test_plt.html' | relative_url }}" ></iframe>
-</div>
-</div>
-</div>
-
 </div>
