@@ -147,7 +147,7 @@ This final classification is then used for the whole project.
 
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
-<div class="content p-4">
+<div class="content p-4" style="height: 70vh">
 <iframe class="graph" src="{{ '/graphs/agreement_bar_plot.html' | relative_url }}" ></iframe>
 </div>
 </div>
@@ -164,7 +164,7 @@ Articles do not exist alone in Wikipedia. Indeed, they are all, to a certain ext
 #### Quantification of players’ behavior
 To quantify the player’s behavior in the Wikispeedia game, we are interested in the way they *use* articles, meaning that we want to see if some articles are more *used* in the process of retrieving a target article from a source article. To quantify the *usage* of an article, we utilize the number of times an article is clicked (referred to as *click count* in our work). To calculate the *click count* per article we count the number of occurrences of an article in both finished and unfinished paths. 
 
-$$Click Count_{article} = \sum_{p=1}^{P} Occurrences_{article, p}$$
+<div style="text-align:center;"> $$Click\ Count_{article} = \sum_{p=1}^{P} Occurrences_{article, p}$$ </div>
 
 As a reminder, a *path* corresponds to the sequence of articles that a player clicks in order to go from a given source article to a set target article. With our *click count* metric we can proxy article usage quite accurately. The higher the *click count* of an article, the more players used it and the bigger is the importance of this article (which importance does this correspond to? This we will find out!). 
 

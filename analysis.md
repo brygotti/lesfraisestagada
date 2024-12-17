@@ -25,9 +25,11 @@ This motivates our decision to analyse the distributions of those countries with
 <div id="carouselWorld" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
     <div class="carousel-item active">
+      <div class="graph-title"> Figure 1: Connectivity of most clicked articles </div>
       <iframe class="graph" src="{{ 'graphs/topic_1/most_used_articles_graph.html' | relative_url }}" ></iframe>
     </div>
     <div class="carousel-item">
+      <div class="graph-title"> Figure 1: Connectivity of least clicked articles </div>
       <iframe class="graph" src="{{ 'graphs/topic_1/least_used_articles_graph.html' | relative_url }}" ></iframe>
     </div>
   </div>
@@ -64,6 +66,7 @@ With *Figure 1* , we get a first intuition of the cultural bias that is present 
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
+      <div class="graph-title"> Figure 2: Proportion of articles per country in Wikispeedia (2007) </div>
       <iframe class="graph" src="{{ '/graphs/topic_1/pie_plot_distribution_of_countries.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -95,6 +98,7 @@ We also see that those same countries are central hubs of the network. They are 
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
+      <div class="graph-title"> Figure 3: World map of connections between countries </div>
       <iframe class="graph" src="{{ '/graphs/topic_1/world_graph_map.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -120,6 +124,7 @@ We observe that countries that occur more often in Wikipedia (i.e. many articles
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
+      <div class="graph-title"> Figure 4: Node degree of countries </div>
       <iframe class="graph" src="{{ '/graphs/topic_1/bar_plot_distribution_of_degrees.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -150,9 +155,11 @@ But, can we rationally explain a differentially distributed click count? Is ther
 <div id="World_click_count" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
     <div class="carousel-item active">
+      <div class="graph-title"> Figure 5: World map of the click count per country and game path between countries before scaling </div>
       <iframe class="graph" src="{{ '/graphs/world_click_counts_before_scaling.html' | relative_url }}" ></iframe>
     </div>
     <div class="carousel-item">
+      <div class="graph-title"> Figure 6: World map of the click count per country and game path between countries after scaling </div>
       <iframe class="graph" src="{{ '/graphs/world_click_counts_after_scaling.html' | relative_url }}" ></iframe>
     </div>
   </div>
