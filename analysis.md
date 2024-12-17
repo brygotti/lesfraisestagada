@@ -78,7 +78,7 @@ With *Figure 1* , we get a first intuition of the cultural bias that is present 
 Let's now look at the connectivity between countries. 
 
 <blockquote style="background-color: #f9f9f9; padding: 10px; border-left: 5px solid #ccc;">
-    Two countries are said to be <strong>connected</strong> if at least one article from the first country contains a link to an article associated to the other country, and the other way around for the 2 same articles.
+    Two countries are said to be <strong>connected</strong> if at least one article from the first country contains a link to an article associated to the other country.
 </blockquote>
 
 We contruct a graph of the Wikispeedia network overlayed with a world map for better visualization of the countries' importance. On this graph (bellow), we have: 
