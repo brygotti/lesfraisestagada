@@ -24,9 +24,11 @@ This motivates our decision to analyse the distributions of those countries with
 <div id="carouselWorld" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
+      <div class="graph-title"> Figure 1: Connectivity of most clicked articles </div>
       <iframe class="graph" src="{{ 'graphs/topic_1/most_used_articles_graph.html' | relative_url }}" ></iframe>
     </div>
     <div class="carousel-item">
+      <div class="graph-title"> Figure 1: Connectivity of least clicked articles </div>
       <iframe class="graph" src="{{ 'graphs/topic_1/least_used_articles_graph.html' | relative_url }}" ></iframe>
     </div>
   </div>
@@ -99,6 +101,7 @@ We also see that those same countries are central hubs of the network. They are 
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
+      <div class="graph-title"> Figure 3: World map of connections between countries </div>
       <iframe class="graph" src="{{ '/graphs/topic_1/world_graph_map.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -126,7 +129,7 @@ We observe that countries that occur more often in Wikipedia (i.e. many articles
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 3: Node degree of countries </div>
+      <div class="graph-title"> Figure 4: Node degree of countries </div>
       <iframe class="graph" src="{{ '/graphs/topic_1/bar_plot_distribution_of_degrees.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -157,7 +160,7 @@ But, can we rationally explain a differentially distributed click count? Is ther
       <div class="col mb-4">
       <div class="card shadow" data-aos="fade-up">
       <div class="content p-4">
-        <h6> Figure 2: Node degree of countries </h6>
+        <div class="graph-title"> Figure 5: World map of the click count per country and game path between countries before scaling </div>
         <iframe class="graph" src="{{ '/graphs/world_click_counts_before_scaling.html' | relative_url }}" ></iframe>
       </div>
       </div>
@@ -167,7 +170,8 @@ But, can we rationally explain a differentially distributed click count? Is ther
       <div class="col mb-4">
       <div class="card shadow" data-aos="fade-up">
       <div class="content p-4">
-      <iframe class="graph" src="{{ '/graphs/world_click_counts_after_scaling.html' | relative_url }}" ></iframe>
+        <div class="graph-title"> Figure 6: World map of the click count per country and game path between countries after scaling </div>
+        <iframe class="graph" src="{{ '/graphs/world_click_counts_after_scaling.html' | relative_url }}" ></iframe>
       </div>
       </div>
       </div>
