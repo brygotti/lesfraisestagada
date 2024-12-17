@@ -11,7 +11,7 @@ title: Analysis
 
 #### A quick word about articles!
 
-As we said in the introduction, we want to associate each article to a country. But why does this actually make sense? Well, if we look at the two graphs below, we can see that almost all atricles among the top20 can be associated to a country (*e.g. English_language to England*). The same is true for the bottom20 articles (*e.g. Afghan hound to Afghanistan*). 
+As we said in the introduction, we want to associate each article to a country. But why does this actually make sense? Well, if we look at the two graphs below, we can see that almost all atricles among the top 20 can be associated to a country (*e.g. English_language to England*). The same is true for the bottom 20 articles (*e.g. Afghan hound to Afghanistan*). 
 
 This motivates our decision to analyse the distributions of those countries within the Wikipedia graph. In the end, we are interested in whether players of the Wikispeedia game really tend to click more on articles that are associated with western countries or if this feature is due to the properties of the Wikipedia graph itself. 
 
@@ -215,8 +215,6 @@ To make sure we account for as much confounders as possible, the ideal thing to 
 The natural thing to do would then be to simply extend the propensity score matching to the 249 groups! Instead of looking for pairs of articles that have a similar propensity score, we would look for k-tuples, with k being the number of countries. But there are two issues with this approach:
 1. Propensity score matching requires an algorithm that finds maximum cardinality matchings. Although there exists such algorithms that run in polynomial time when k=2, when k>2 the problem is NP-hard, meaning all currently known algorithms for this problem run in exponential time (pretty bad).
 2. Alright, but our dataset is not that big! Couldn't we just use an exponential time algorithm and be done with it? Well, another problem would then arise: for a lot of countries, the number of articles assigned to them is 1. This means that we would only be able to create a single k-tuple, and then we would already have exhausted all articles for a lot of countries. That would mean that our rebalanced dataset would contain only one article per country, which of course is not enough to make any kind of analysis.
-
-[TODO: put some graph from this page for example ?](https://en.wikipedia.org/wiki/3-dimensional_matching)
 
 </div>
 </div>
