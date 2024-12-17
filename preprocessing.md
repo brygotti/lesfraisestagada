@@ -102,7 +102,7 @@ You will be given textual articles. For each article provide a single and unique
 If there is no country related to the article, please write 'None'.<br/>
 If the location is not on earth, please write 'None'.<br/>
 If the article is a general article where the content is not specifically related to a country, please write 'None'.<br/>
-You must be 100\% sure this is a question of life.<br/>
+You must be 100% sure this is a question of life.<br/>
 This is the list of coutnries that you are allowed to output don't output anything that is not in this list: {countries}
 </blockquote>
 
@@ -164,7 +164,7 @@ Articles do not exist alone in Wikipedia. Indeed, they are all, to a certain ext
 #### Quantification of players’ behavior
 To quantify the player’s behavior in the Wikispeedia game, we are interested in the way they *use* articles, meaning that we want to see if some articles are more *used* in the process of retrieving a target article from a source article. To quantify the *usage* of an article, we utilize the number of times an article is clicked (referred to as *click count* in our work). To calculate the *click count* per article we count the number of occurrences of an article in both finished and unfinished paths. 
 
-<div style="text-align:center;"> $$Click\ Count_{article} = \sum_{p=1}^{P} Occurrences_{article, p}$$ </div>
+\\[Click Count_{article} = \sum_{p=1}^{P} Occurrences_{article, p}\\]
 
 As a reminder, a *path* corresponds to the sequence of articles that a player clicks in order to go from a given source article to a set target article. With our *click count* metric we can proxy article usage quite accurately. The higher the *click count* of an article, the more players used it and the bigger is the importance of this article (which importance does this correspond to? This we will find out!). 
 
