@@ -188,6 +188,24 @@ But, can we rationally explain a differentially distributed click count? Is ther
 </div>
 </div>
 
+<div class="col mb-4" id="plot1">
+  <div class="card shadow" data-aos="fade-up">
+    <div class="content p-4">
+      <div class="graph-title"> Figure 7: Start and stop articles count </div>
+      <iframe class="graph" src="{{ '/graphs/topic_1/top_10_countries_start_stop.html' | relative_url }}"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="col mb-4" id="plot1">
+  <div class="card shadow" data-aos="fade-up">
+    <div class="content p-4">
+      <div class="graph-title"> Figure 8: Dead end countries </div>
+      <iframe class="graph" src="{{ '/graphs/top_country_dead_end_articles.html' | relative_url }}"></iframe>
+    </div>
+  </div>
+</div>
+
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
