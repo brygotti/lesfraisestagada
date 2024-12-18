@@ -251,15 +251,14 @@ Of course, the way we computed this new metric is quite arbitrary, and there mig
 </div>
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content">
+  <div class="card shadow" data-aos="fade-up">
+    <div class="content p-4">
+      <div class="graph-title"> Figure 7: World map of the normalized click count per country </div>
+      <iframe class="graph" src="{{ '/graphs/normalized_click_counts.html' | relative_url }}" ></iframe>
+    </div>
+  </div>
+</div>
 
-  <div class="graph-title"> Figure 7: World map of the normalized click count per country </div>
-  <iframe class="graph" src="{{ '/graphs/normalized_click_counts.html' | relative_url }}" ></iframe>
-
-</div>
-</div>
-</div>
 
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
