@@ -60,10 +60,20 @@ These findings show the limitations of the current text-matching methodology and
 <div id="carouselCountry" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
     <div class="carousel-item active" style="height: 70vh">
+      <div class="graph-title"> Figure 1: Proportion of articles assigned to a country</div>
       <iframe class="graph" src="{{ '/graphs/proportion_country_assignment.html' | relative_url }}" ></iframe>
     </div>
-    <div class="carousel-item" style="height: 70vh">
-      <iframe class="graph" src="{{ '/graphs/overlap_heatmap.html' | relative_url }}" ></iframe>
+      <div class="carousel-item" style="min-height: 70vh; overflow: auto;">
+      <div class="graph-title"> Figure 2: Overlap Between Classification Methods</div>
+      <iframe class="graph" src="{{ '/graphs/overlap_heatmap.html' | relative_url }}" style="flex: 1;"></iframe>
+      <div style="padding: 10px;">
+        Legend: <br/>
+        0: Text search <br/>
+        1: Text search + missing entries with LLaMa <br/>
+        2: Full classification with Qwen <br/>
+        3: Full classification with LLaMa <br/>
+        4: Improved classification with LLaMa
+      </div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselCountry" data-bs-slide="prev">
@@ -146,11 +156,12 @@ This final classification is then used for the whole project.
 </div>
 
 <div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content p-4" style="height: 70vh">
-<iframe class="graph" src="{{ '/graphs/agreement_bar_plot.html' | relative_url }}" ></iframe>
-</div>
-</div>
+  <div class="card shadow" data-aos="fade-up">
+    <div class="content p-4" style="height: 70vh">
+          <div class="graph-title"> Figure 3: Agreement between annotators and classification method in %</div>
+          <iframe class="graph" src="{{ '/graphs/agreement_bar_plot.html' | relative_url }}" ></iframe>
+    </div>
+  </div>
 </div>
 
 <div class="col mb-4">
