@@ -246,7 +246,16 @@ Given the results of the regression analysis, we will only consider two confound
 
 Of course, the way we computed this new metric is quite arbitrary, and there might be many other ways to do it. For example, if the relationship between the in-degree and the click count was quadratic, it would make more sense to divide the click count by the square of the in-degree. But given that it is very hard to know for sure what the relationship between our confounders and the click count is, we will stick to this simple approach. This actually still makes quite a bit of sense: we are essentially counting, for a given country, the average number of clicks that a single link to that country receives.
 
-[TODO: put some graphs of the top countries with the normalized click count]()
+</div>
+</div>
+</div>
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content">
+
+  <div class="graph-title"> Figure 7: World map of the normalized click count per country </div>
+  <iframe class="graph" src="{{ '/graphs/normalized_click_counts.html' | relative_url }}" ></iframe>
 
 </div>
 </div>
