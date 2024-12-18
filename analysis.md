@@ -29,7 +29,7 @@ This motivates our decision to analyse the distributions of those countries with
       <iframe class="graph" src="{{ 'graphs/topic_1/most_used_articles_graph.html' | relative_url }}" ></iframe>
     </div>
     <div class="carousel-item">
-      <div class="graph-title"> Figure 1: Connectivity of least clicked articles </div>
+      <div class="graph-title"> Figure 2: Connectivity of least clicked articles </div>
       <iframe class="graph" src="{{ 'graphs/topic_1/least_used_articles_graph.html' | relative_url }}" ></iframe>
     </div>
   </div>
@@ -198,7 +198,7 @@ As we saw in our first naive analysis, the click count metric is not a good prox
 
 #### What variables influence the click count?
 
-As seen before, countries with more articles have more clicks. This is very much expected, as the more articles a country has, the more likely it is that a user will encounter an article of that country. This is the most obvious example of a confounding variable that influences the click count. But this is not necessarily the only one. Indeed, it could be that other variables like the in-degree, out-degree, or even the categories of the articles have an influence on the click count. For example, for a given country, if the distribution of in-degrees is higher than the average, it means that players will see more links to that country, and thus might click more often on it.
+As seen before, countries with more articles have more clicks. This is very much expected, as the more articles a country has, the more likely it is that a user will encounter an article of that country. This is the most obvious example of a confounding variable that influences the click count. But this is not necessarily the only one. Indeed, it could be that other variables like the <a href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree" data-bs-toggle="tooltip" data-bs-title="Note: for a given article A, the in-degree is the number of links found in other articles targetting A, while the out-degree is the number of outgoing links found in A">in-degree, out-degree</a>, or even the categories of the articles have an influence on the click count. For example, for a given country, if the distribution of in-degrees is higher than the average, it means that players will see more links to that country, and thus might click more often on it.
 
 </div>
 </div>
