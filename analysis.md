@@ -246,9 +246,11 @@ This means we need to consider something simpler. We will first analyze how much
 
 #### Normalizing the click count
 
-Given the results of the regression analysis, we will only consider two confounders, which seem to have the most influence on the click count: the number of articles per country and the in-degree of each article. We will define a new metric, the normalized click count: for each country, we will divide the total number of clicks made to articles of that country by the total number of links-in from articles of that country. This will give us a metric that accounts for the influence of the number of articles and the in-degree of each country.
+Given the results of the regression analysis, we will only consider two confounders, which seem to have the most influence on the click count: the number of articles per country and the in-degree of each article. We will define a new metric, the normalized click count: for each country, we will divide the total number of clicks made to articles of that country by the total in-degree of that country. Note that given the high correlation between the in-degree of a country and the number of articles in that country (the more articles, the more links to those articles), this new metric is essentially accounting for both confounders at once.
 
-Of course, the way we computed this new metric is quite arbitrary, and there might be many other ways to do it. For example, if the relationship between the in-degree and the click count was quadratic, it would make more sense to divide the click count by the square of the in-degree. But given that it is very hard to know for sure what the relationship between our confounders and the click count is, we will stick to this simple approach. This actually still makes quite a bit of sense: we are essentially counting, for a given country, the average number of clicks that a single link to that country receives.
+Although it might seem like the way we computed this new metric is quite arbitrary, it actually still makes a lot of sense: we are essentially counting, for a given country, the average number of clicks that a single link to that country receives.
+
+As we can see in the graph below, this already looks a lot more interesting. The top countries are no longer dominated by Western countries. We see countries like South Africa, Jordan or Mexico among the top. The USA is still pretty high (ending up at the second position), but it is now with Canada the only two Westerb countries left in the top 10.
 
 </div>
 </div>
