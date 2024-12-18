@@ -54,9 +54,9 @@ This motivates our decision to analyse the distributions of those countries with
 
 Now that all (most) articles are associated to a country, we can look at the distribution of those countries. Is there a country that is associated to more articles? (we have our little idea haha but let's check). 
 
-We see that 8 countries make up for <sup>1</sup>/<sub>2</sub> of the articles in Wikipedia, namely the **US**, **UK**, **Australia**, **France**, **Germany**, **Italy**, **India** and **China**. Those are all in the top10 of countries that publish the most!!
+We see that 8 countries make up for <sup>1</sup>/<sub>2</sub> of the articles in Wikipedia, namely the **US**, **UK**, **Australia**, **France**, **Germany**, **Italy**, **India** and **China**. Those are all in the top 10 of countries that publish the most!!
 
-With *Figure 1* , we get a first intuition of the cultural bias that is present in the Wikipeedia graph: countries that publish most are also represented by more articles. When players play on this already biased graph, they will obviously click most on articles from those countries. So, later, when we analyze the behavior of the players, we will have to keep this in mind and normalize the click counts of the players by the number of articles per country! But this is for later, let's go on here!
+With *Figure 2*, we get a first intuition of the cultural bias that is present in the Wikipeedia graph: countries that publish most are also represented by more articles. When players play on this already biased graph, they will obviously click most on articles from those countries. So, later, when we analyze the behavior of the players, we will have to keep this in mind and normalize the click counts of the players by the number of articles per country! But this is for later, let's go on here!
 
 </div>
 </div>
@@ -87,7 +87,7 @@ We contruct a graph of the Wikispeedia network overlayed with a world map for be
 - the size and color of a node is proportional to the number of articles associtated to that node
 - edges represent connnections between countries in the Wikipedia graph
 
-With the slider on the top right part of the map we can select edges that occur more than a certain amount of times. We can see that edges that appear most (above 130 times) are those connecting countries that are associated to the most articles (e.g. USA, UK, France, Germany, Italy, India, Australia, China and Russia).
+With the slider on the top left part of the map we can select edges that occur more than a certain amount of times. We can see that edges that appear most (above 130 times) are those connecting countries that are associated to the most articles (e.g. USA, UK, France, Germany, Italy, India, Australia, China and Russia).
 
 We also see that those same countries are central hubs of the network. They are part of most edges and are also connected to most other countries. This makes sense since the more articles there are, the more out-links there are and ultimately the higher the chance to be referenced by other articles. 
 
@@ -108,13 +108,15 @@ We also see that those same countries are central hubs of the network. They are 
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
-Lastly, let's look at the in and out degree of each country. 
+Lastly, let's look at the <a href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">in and out-degree</a> of each country. 
 
-<blockquote class="blockquote-content">
-    The <strong>in degree</strong> of a country is defined as the sum of the in degrees of its articles. Same for <strong>out degree</strong>. The higher the in degree of a country, the more central it is meaning that the more it is accessible from other countries. 
+<blockquote class="blockquote-content" markdown="1">
+For a given article A, the in-degree is the number of links found in other articles targetting A, while the out-degree is the number of outgoing links found in A. The in-degree of a country is then defined as the sum of the in-degrees of its articles. Same for the out-degree.
+
+Thus, the higher the in degree of a country, the more central it is meaning that the more it is accessible from other countries.
 </blockquote>
 
-We observe that countries that occur more often in Wikipedia (i.e. many articles are associated with those countries), are immensely more connected, so have much more links that lead in and out of them. Those articles are so called "central hubs" of the Wikipedia graph. 
+As expected, we observe that those same central hub countries, that make up for most of the articles in the graph, have also much more links that lead in and out of them.
 
 </div>
 </div>
@@ -137,13 +139,15 @@ We observe that countries that occur more often in Wikipedia (i.e. many articles
 
 #### Naive analysis of players click count
 
-As seen previously, there is a unequal distribution of articles in Wikipedia, some countries are more represented than others. But, are those countries clicked more often by players within the Wikispeedia game? Or is there other countries that are clicked more often? We will now investigate if we see a bias independent from the coutries distribution and whether the click count can be a good approximation of player's intention. 
+Now, let us analyze the players' behavior in the Wikispeedia game.
+
+As seen previously, there is a unequal distribution of articles in Wikipedia, some countries are more represented than others. But, are those countries clicked more often by players within the Wikispeedia game? Or is there other countries that are clicked more often? We will now investigate if we see a bias independent from the countries distribution and whether the click count can be a good approximation of player's intention. 
 
 To do so, a first naïve approach is simply to detect countries with higher click counts (see Figure 5). With this approach, it seems that players are highly biased in their way to play Wikispeedia as some countries like United States, United Kingdom, and Australia are represented by enormous dots due to their higher click count while other are almost not visible on the map.
 
-However, a high click count can simply be due to the high number of articles associated to a particular country within the game. This does not necessarily tell us something about player's biases. Therefore, we rather focus on the ratio of click count divided by the number of articles to get a result closer to reality. On Figure 6, we see a overrepresentation of some countries like Vatican city, Brazil, or South Africa which are different from the previous ones. Therefore, part of the high click count can simply be explained by the high number of articles associated to a particular country. But there appear to be another factor influencing the click count per country as some countries remain more represented than other even when considering a scaled version of the click count.
+However, a high click count can simply be due to the high number of articles associated to a particular country within the game. This does not necessarily tell us something about player's biases. Therefore, we rather focus on the ratio of click count divided by the number of articles to get a result closer to reality. On Figure 6, we see an overrepresentation of some countries like Vatican city, Brazil, or South Africa which are different from the previous ones. Therefore, part of the high click count can simply be explained by the high number of articles associated to a particular country. But there appear to be another factor influencing the click count per country as some countries remain more represented than other even when considering a scaled version of the click count.
 
-But, can we rationally explain a differentially distributed click count? Is there other factors influcing the click count that simply player's biases? Onto the next topic to figure it out!
+But, can we rationally explain a differentially distributed click count? Is there other factors influcing the click count than simply player's biases? Onto the next topic to figure it out!
 
 </div>
 </div>
@@ -194,11 +198,11 @@ But, can we rationally explain a differentially distributed click count? Is ther
 
 #### Accounting for the influence of the graph
 
-As we saw in our first naive analysis, the click count metric is not a good proxy for analyzing the players intentions. Indeed, it seems to be heavily influenced by the graph's structure. We will now explore how we can account for this influence and remove it as much as possible.
+As we saw in our first naive analysis, the click count metric, even when scaled by the number of articles per country, is not a good proxy for analyzing the players intentions. Indeed, it seems to be heavily influenced by the graph's structure. We will now explore how we can account for this influence and remove it as much as possible.
 
 #### What variables influence the click count?
 
-As seen before, countries with more articles have more clicks. This is very much expected, as the more articles a country has, the more likely it is that a user will encounter an article of that country. This is the most obvious example of a confounding variable that influences the click count. But this is not necessarily the only one. Indeed, it could be that other variables like the <a href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree" data-bs-toggle="tooltip" data-bs-title="Note: for a given article A, the in-degree is the number of links found in other articles targetting A, while the out-degree is the number of outgoing links found in A">in-degree, out-degree</a>, or even the categories of the articles have an influence on the click count. For example, for a given country, if the distribution of in-degrees is higher than the average, it means that players will see more links to that country, and thus might click more often on it.
+As seen before, countries with more articles have more clicks. This is very much expected, as the more articles a country has, the more likely it is that a user will encounter an article of that country. This is the most obvious example of a confounding variable that influences the click count. But this is not necessarily the only one. Indeed, it could be that other variables like the in-degree, out-degree, or even the categories of the articles have an influence on the click count. For example, for a given country, if the distribution of in-degrees is higher than the average, it means that players will see more links to that country, and thus might click more often on it.
 
 </div>
 </div>
@@ -213,7 +217,7 @@ As seen before, countries with more articles have more clicks. This is very much
 To make sure we account for as much confounders as possible, the ideal thing to do would be to set up some kind of propensity score matching. But how? Usually, propensity score matching is done between two groups that are compared in the experiment: a treatment group and a control group. However, in our case, we are comparing click counts across countries, meaning we do not have 2, but rather 249 groups that are compared with one another (one group per country).
 
 The natural thing to do would then be to simply extend the propensity score matching to the 249 groups! Instead of looking for pairs of articles that have a similar propensity score, we would look for k-tuples, with k being the number of countries. But there are two issues with this approach:
-1. Propensity score matching requires an algorithm that finds maximum cardinality matchings. Although there exists such algorithms that run in polynomial time when k=2, when k>2 the problem is NP-hard, meaning all currently known algorithms for this problem run in exponential time (pretty bad).
+1. Propensity score matching requires an algorithm that finds maximum cardinality matchings. Although there exists such algorithms that run in polynomial time when k=2, when k>2 <a href="https://en.wikipedia.org/wiki/3-dimensional_matching#Decision_problem">the problem is NP-hard</a>, meaning all currently known algorithms for this problem run in exponential time (pretty bad).
 2. Alright, but our dataset is not that big! Couldn't we just use an exponential time algorithm and be done with it? Well, another problem would then arise: for a lot of countries, the number of articles assigned to them is 1. This means that we would only be able to create a single k-tuple, and then we would already have exhausted all articles for a lot of countries. That would mean that our rebalanced dataset would contain only one article per country, which of course is not enough to make any kind of analysis.
 
 </div>
