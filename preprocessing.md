@@ -98,11 +98,11 @@ This is the list of coutnries that you are allowed to output don't output anythi
   <div class="carousel-inner">
     <div class="carousel-item active" style="height: 75vh">
       <div class="graph-title"> Figure 1: Proportion of articles assigned to a country</div>
-      <iframe class="graph" src="{{ '/graphs/proportion_country_assignment.html' | relative_url }}" ></iframe>
+      <iframe class="graph" src="{{ '/graphs/preprocessing/proportion_country_assignment.html' | relative_url }}" ></iframe>
     </div>
     <div class="carousel-item" style="min-height: 75vh; overflow: auto;">
       <div class="graph-title"> Figure 2: Overlap Between Classification Methods</div>
-      <iframe class="graph" src="{{ '/graphs/overlap_heatmap.html' | relative_url }}" style="flex: 1;"></iframe>
+      <iframe class="graph" src="{{ '/graphs/preprocessing/overlap_heatmap.html' | relative_url }}" style="flex: 1;"></iframe>
       <div style="padding: 10px;">
         Legend: <br/>
         0: Text search <br/>
@@ -166,7 +166,7 @@ This final classification is then used for the whole project.
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4" style="height: 70vh">
           <div class="graph-title"> Figure 3: Agreement between annotators and classification method in %</div>
-          <iframe class="graph" src="{{ '/graphs/agreement_bar_plot.html' | relative_url }}" ></iframe>
+          <iframe class="graph" src="{{ '/graphs/preprocessing/agreement_bar_plot.html' | relative_url }}" ></iframe>
     </div>
   </div>
 </div>
