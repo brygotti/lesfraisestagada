@@ -133,52 +133,6 @@ As expected, we observe that those same central hub countries, that make up for 
 </div>
 
 
-<div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content p-4" markdown="1">
-
-#### Naive analysis of players click count
-
-Now, let us analyze the players' behavior in the Wikispeedia game.
-
-As seen previously, there is a unequal distribution of articles in Wikipedia, some countries are more represented than others. But, are those countries clicked more often by players within the Wikispeedia game? Or is there other countries that are clicked more often? We will now investigate if we see a bias independent from the countries distribution and whether the click count can be a good approximation of player's intention. 
-
-To do so, a first naïve approach is simply to detect countries with higher click counts (see Figure 5). With this approach, it seems that players are highly biased in their way to play Wikispeedia as some countries like United States, United Kingdom, and Australia are represented by enormous dots due to their higher click count while other are almost not visible on the map.
-
-However, a high click count can simply be due to the high number of articles associated to a particular country within the game. This does not necessarily tell us something about player's biases. Therefore, we rather focus on the ratio of click count divided by the number of articles to get a result closer to reality. On Figure 6, we see an overrepresentation of some countries like Vatican city, Brazil, or South Africa which are different from the previous ones. Therefore, part of the high click count can simply be explained by the high number of articles associated to a particular country. But there appear to be another factor influencing the click count per country as some countries remain more represented than other even when considering a scaled version of the click count.
-
-But, can we rationally explain a differentially distributed click count? Is there other factors influcing the click count than simply player's biases? Onto the next topic to figure it out!
-
-</div>
-</div>
-</div>
-
-<div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content">
-<div id="World_click_count" class="carousel slide" data-bs-theme="dark">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="graph-title"> Figure 5: World map of the click count per country and game path between countries before scaling </div>
-      <iframe class="graph" src="{{ '/graphs/world_click_counts_before_scaling.html' | relative_url }}" ></iframe>
-    </div>
-    <div class="carousel-item">
-      <div class="graph-title"> Figure 6: World map of the click count per country and game path between countries after scaling </div>
-      <iframe class="graph" src="{{ '/graphs/world_click_counts_after_scaling.html' | relative_url }}" ></iframe>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#World_click_count" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#World_click_count" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
-</div>
-</div>
 
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
@@ -195,7 +149,7 @@ But, can we rationally explain a differentially distributed click count? Is ther
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 7: Start and stop articles count </div>
+      <div class="graph-title"> Figure 5: Start and stop articles count </div>
       <iframe class="graph" src="{{ '/graphs/topic_1/top_10_countries_start_stop.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -204,10 +158,58 @@ But, can we rationally explain a differentially distributed click count? Is ther
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 8: Dead end countries </div>
+      <div class="graph-title"> Figure 6: Dead end countries </div>
       <iframe class="graph" src="{{ '/graphs/top_country_dead_end_articles.html' | relative_url }}"></iframe>
     </div>
   </div>
+</div>
+
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content p-4" markdown="1">
+
+#### Naive analysis of players click count
+
+Now, let us analyze the players' clicking behavior in the Wikispeedia game.
+
+As seen previously, there is a unequal distribution of articles in Wikipedia, some countries are more represented than others. But, are those countries clicked more often by players within the Wikispeedia game? Or is there other countries that are clicked more often? We will now investigate if we see a bias independent from the countries distribution and whether the click count can be a good approximation of player's intention. 
+
+To do so, a first naïve approach is simply to detect countries with higher click counts (see Figure 7). With this approach, it seems that players are highly biased in their way to play Wikispeedia as some countries like United States, United Kingdom, and Australia are represented by enormous dots due to their higher click count while other are almost not visible on the map.
+
+However, a high click count can simply be due to the high number of articles associated to a particular country within the game. This does not necessarily tell us something about player's biases. Therefore, we rather focus on the ratio of click count divided by the number of articles to get a result closer to reality. On Figure 8, we see an overrepresentation of some countries like Vatican city, Brazil, or South Africa which are different from the previous ones. Therefore, part of the high click count can simply be explained by the high number of articles associated to a particular country. But there appear to be another factor influencing the click count per country as some countries remain more represented than other even when considering a scaled version of the click count.
+
+But, can we rationally explain a differentially distributed click count? Is there other factors influcing the click count than simply player's biases? Onto the next topic to figure it out!
+
+</div>
+</div>
+</div>
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content">
+<div id="World_click_count" class="carousel slide" data-bs-theme="dark">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="graph-title"> Figure 7: World map of the click count per country and game path between countries before scaling </div>
+      <iframe class="graph" src="{{ '/graphs/world_click_counts_before_scaling.html' | relative_url }}" ></iframe>
+    </div>
+    <div class="carousel-item">
+      <div class="graph-title"> Figure 8: World map of the click count per country and game path between countries after scaling </div>
+      <iframe class="graph" src="{{ '/graphs/world_click_counts_after_scaling.html' | relative_url }}" ></iframe>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#World_click_count" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#World_click_count" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+</div>
 </div>
 
 <div class="col mb-4">
@@ -277,23 +279,10 @@ As we can see in the graph below, this already looks a lot more interesting. The
 <div class="col mb-4">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 7: World map of the normalized click count per country </div>
+      <div class="graph-title"> Figure 9: World map of the normalized click count per country </div>
       <iframe class="graph" src="{{ '/graphs/normalized_click_counts.html' | relative_url }}" ></iframe>
     </div>
   </div>
-</div>
-
-
-<div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content p-4" markdown="1">
-
-#### What variables influence the dead ends analysis?
-
-[TODO: explain what was done to normalize the dead ends metric]()
-
-</div>
-</div>
 </div>
 
 <div class="col mb-4">
