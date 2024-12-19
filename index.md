@@ -61,15 +61,19 @@ As a small appetizer, let us throw a quick look at <a href="#carouselIntro" data
 <div class="content p-4" markdown="1">
 
 #### What is the plan?
-  <p>
-        The first step will be to understand the **navigation patterns** of players in the game. For this, we will compare two hypotheses, namely the <span style="color: red;">“passive”</span> and the 
-        <span style="color: blue;">“active”</span> hypothesis:
 
-- In the<span style="color: red;">“passive”</span> hypothesis, we assume that players “passively” play on a graph that over-represents countries producing a lot of scientific knowledge. The players are not biased in themselves, they are only influenced by the graph. Thus, by removing the bias of the graph (i.e. by controlling as much as possible for the confounders of the graph), there shouldn't be any bias detectable in the players’ behavior.
-
-- The  <span style="color: blue;">“active”</span> hypothesis states that players “actively” add their own intrinsic biases when playing on that graph. That is, players are inherently attracted towards some countries, while disregarding others. By removing the graph bias, the player’s preference for some countries would, in this hypothesis, still be visible.
-
-</p>
+<p>
+        The first step will be to understand the <strong>navigation patterns</strong> of players in the game. For this, we will compare two hypotheses, namely the 
+        <span style="color: green;">“passive”</span> and the <span style="color: blue;">“active”</span> hypothesis:
+    </p>
+    <ul>
+        <li>
+            <span style="color: green;">“Passive”</span> hypothesis: we assume that players “passively” play on a graph that over-represents countries producing a lot of scientific knowledge. The players are not biased in themselves; they are only influenced by the graph. Thus, by removing the bias of the graph (i.e., by controlling as much as possible for the confounders of the graph), there shouldn't be any bias detectable in the players’ behavior.
+        </li>
+        <li>
+            <span style="color: blue;">“Active”</span> hypothesis: players “actively” add their own intrinsic biases when playing on that graph. That is, players are inherently attracted towards some countries, while disregarding others. By removing the graph bias, the player’s preference for some countries would, in this hypothesis, still be visible.
+        </li>
+    </ul>
 
 Once this first analysis is done, we will be in a good position to investigate what is the players' intrinsic bias, and whether it is related in any way to the production of scientific knowledge in the world.
 
