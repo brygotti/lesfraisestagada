@@ -77,7 +77,7 @@ As a small appetizer, let us throw a quick look at <a href="#carouselIntro" data
 
 Once this first analysis is done, we will be in a good position to investigate what is the players' intrinsic bias, and whether it is related in any way to the production of scientific knowledge in the world.
 
-Now, to succeed in this quest we are obliged to meet certain requirements. First, as we are working with a global database and as we intend to investigate worldwide geographical biases, we need to associate each article with a country. Next, to quantify the players’ behavior in the game we will use their clicking patterns, more precisely the number of times each article is clicked. Finally, as we are interested in showing how the production of scientific knowledge impacts players’ behavior, we need to match each of the previously defined countries to the number of publications produced within those countries during the year 2007. 
+Now, to succeed in this quest we are obliged to meet certain requirements. First, as we are working with a global database and as we intend to investigate worldwide geographical biases, we need to <strong>associate each article with a country</strong>. Next, to quantify the players’ behavior in the game we will use their clicking patterns, more precisely the number of times each article is clicked. Finally, as we are interested in showing how the production of scientific knowledge impacts players’ behavior, we need to match each of the previously defined countries to the number of publications produced within those countries during the year 2007. 
 
 Let's jump to the next section to gain precious insights into our methods and data preprocessing!
 </div>

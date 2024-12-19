@@ -11,9 +11,9 @@ title: Analysis
 
 #### A quick word about articles!
 
-As we said in the introduction, we want to associate each article to a country. But why does this actually make sense? Well, if we look at the two graphs below, we can see that almost all atricles among the top 20 can be associated to a country (*e.g. English_language to England*). The same is true for the bottom 20 articles (*e.g. Afghan hound to Afghanistan*). 
+As we said in the introduction, we want to associate each article to a country. But why does this actually make sense? Well, if we look at <a href="#carouselGraphArticles" data-bs-toggle="tooltip">figure 1 and 2</a> below, we can see that almost all atricles among the top 20 can be associated to a country (*e.g. English_language to England*). The same is true for the bottom 20 articles (*e.g. Afghan hound to Afghanistan*). 
 
-This motivates our decision to analyse the distributions of those countries within the Wikipedia graph. In the end, we are interested in whether players of the Wikispeedia game really tend to click more on articles that are associated with western countries or if this feature is due to the properties of the Wikipedia graph itself. 
+This motivates our decision to analyze the distributions of those countries within the Wikipedia graph. In the end, we are interested in whether players of the Wikispeedia game really tend to click more on articles that are associated with western countries or if this feature is due to the properties of the Wikipedia graph itself. Let's dive into the analysis and see if we can conclude anything! 
 
 </div>
 </div>
@@ -22,15 +22,28 @@ This motivates our decision to analyse the distributions of those countries with
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
 <div class="content">
-<div id="carouselWorld" class="carousel slide" data-bs-theme="dark">
+<div id="carouselGraphArticles" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="graph-title"> Figure 1: Connectivity of most clicked articles </div>
-      <iframe class="graph" src="{{ 'graphs/topic_1/most_used_articles_graph.html' | relative_url }}" ></iframe>
-    </div>
+      <iframe class="graph" src="{{ 'graphs/topic_1/most_used_articles_graph.html' | relative_url }}" style="width: 100%; height: 500px; border: none;"></iframe>
+      <div style="padding: 10px;">
+        Legend: <br/>
+        Each node represents an article <br/>
+        node color: darker if the article is clicked more aften in Wikispeedia <br/>
+        edges: represent outgoing links found in the articles <br/>
+        <a href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">in and out-degree</a>
+      </div>
     <div class="carousel-item">
       <div class="graph-title"> Figure 2: Connectivity of least clicked articles </div>
-      <iframe class="graph" src="{{ 'graphs/topic_1/least_used_articles_graph.html' | relative_url }}" ></iframe>
+      <iframe class="graph" src="{{ 'graphs/topic_1/least_used_articles_graph.html' | relative_url }}" style="width: 100%; height: 500px; border: none;"></iframe>
+      <div style="padding: 10px;">
+        Legend: <br/>
+        Each node represents an article <br/>
+        node color: darker if the article is clicked more aften in Wikispeedia <br/>
+        edges: represent outgoing links found in the articles <br/>
+        in degree and out degree: see <a href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">here</a>
+      </div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselWorld" data-bs-slide="prev">
