@@ -305,11 +305,11 @@ As we can see in the graph below, this already looks a lot more interesting. The
 
 #### PageRank as a way to account for a lot of confounders at once
 
-We will now dive into a last attempt at accounting for the influence of the graph on our analysis of the players behavior. To do so, we will use the PageRank algorithm. This algorithm simulates a random player that would start on a random article and then randomly click on links. It then outputs a score for each article, which is the probability that this random player clicked on that article at any given time. We will then compare this PageRank probability with the probability that a player from our dataset clicked on that article. For a given article, if the two probabilities are very different, it means that players from our dataset click more often (or less often) on that article than what would be expected from a random player.
+We will now dive into a last attempt at accounting for the influence of the graph on our analysis of the players behavior. To do so, we will use the PageRank algorithm. This algorithm simulates a random player that would start on a random article and then randomly click on links. It then outputs a score for each article, which is the probability that this random player clicked on that article at any given time. We will then compare this PageRank probability with the probability that a player from our dataset clicked on that article (we call this second probability the player rank). For a given article, if the two probabilities are very different, it means that players from our dataset click more often (or less often) on that article than what would be expected from a random player.
 
 #### What confounders do we account for?
 
-By studying the difference between the PageRank probability and the players click probability, we are essentially accounting for all confounding variables coming from the graph structure. Indeed, given that both our players and the PageRank algorithm were given the exact same graph, if they behaved differently, it cannot be explained by variables coming from the graph!
+By studying the difference between the PageRank probability and the player rank probability, we are essentially accounting for all confounding variables coming from the graph structure. Indeed, given that both our players and the PageRank algorithm were given the exact same graph, if they behaved differently, it cannot be explained by variables coming from the graph!
 
 However, it is important to note that we are only accounting for confounders in the structure of the graph, and not in the content of the articles. Variables like categories or titles might have a significant influence on the players behavior, and their distribution might change from one country to another. This is something that we cannot account for with the PageRank algorithm, and that we decided to ignore in this analysis.
 
@@ -322,12 +322,12 @@ However, it is important to note that we are only accounting for confounders in 
 <div class="content">
 <div id="pagerank" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
-    <div class="carousel-item active" style="height: 70vh">
+    <div class="carousel-item active">
       <div class="graph-title"> Figure 10: PageRank vs players comparison </div>
       <iframe class="graph" src="{{ '/graphs/topic_3/player_vs_pagerank.html' | relative_url }}" ></iframe>
     </div>
-    <div class="carousel-item" style="height: 70vh">
-      <div class="graph-title"> Figure 11: PageRank difference </div>
+    <div class="carousel-item">
+      <div class="graph-title"> Figure 11: PageRank difference (Player rank minus PageRank) </div>
       <iframe class="graph" src="{{ '/graphs/topic_3/rank_diff.html' | relative_url }}" ></iframe>
     </div>
   </div>
@@ -340,6 +340,21 @@ However, it is important to note that we are only accounting for confounders in 
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+</div>
+</div>
+</div>
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content p-4" markdown="1">
+
+#### PageRank analysis
+
+As we can see in the plot in figure 10, the player rank is very similar to the PageRank for the top 10 countries. This shows a strong influence from the graph structure on the players behavior. In figure 11, we subtract the PageRank from the player rank. With that, we are essentially doing a change of reference frame, now computing how much more (or less) often a player clicked on an article compared to a random player. The differences seem very small, but it is good to remember that they must be interpreted as probabilities. To make sure the difference is significant, we computed a chi-square test (the null hypothesis being that the player behaves exactly like a random walker), and the p-value was found to be very close to 0 (\\(p \ll 0.05\\)). This proves that although the players are highly influenced by the graph, they still have some intrinsic biases.
+
+Looking at the top 10 countries in term of rank difference (figure 11), we see that a lot of them were already present in the top 10 of the normalized click count: USA, South Africa, Greece or UK. This confirms the soundness of our earlier analysis. But given how the PageRank analysis accounts for a lot more confounders than the normalized click count, we will focus for the next part on countries that have a high enough rank difference to be considered as significant, that is: USA, South Africa, UK, Greece, Brazil, Mexico and Canada.
+
+Interestingly, the bottom 10 countries in term of rank difference (figure 11) seem to be made up of some pretty big players in the scientific world like France, China or India. So are players really attracted towards countries with high scientific knowledge production? Let us find out in the next section!
 </div>
 </div>
 </div>
