@@ -26,7 +26,7 @@ This motivates our decision to analyze the distributions of those countries with
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="graph-title"> Figure 1: Connectivity of most clicked articles </div>
-      <iframe class="graph" src="{{ 'graphs/topic_1/most_used_articles_graph.html' | relative_url }}" style="width: 100%; height: 500px; border: none;"></iframe>
+      <iframe class="graph" src="{{ 'graphs/topic_1/most_used_articles_graph.html' | relative_url }}"></iframe>
       <div style="padding: 10px;">
         Legend: <br/>
         Each node represents an article <br/>
@@ -34,9 +34,10 @@ This motivates our decision to analyze the distributions of those countries with
         edges: represent outgoing links found in the articles <br/>
         <a href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">in and out-degree</a>
       </div>
+    </div>
     <div class="carousel-item">
       <div class="graph-title"> Figure 2: Connectivity of least clicked articles </div>
-      <iframe class="graph" src="{{ 'graphs/topic_1/least_used_articles_graph.html' | relative_url }}" style="width: 100%; height: 500px; border: none;"></iframe>
+      <iframe class="graph" src="{{ 'graphs/topic_1/least_used_articles_graph.html' | relative_url }}"></iframe>
       <div style="padding: 10px;">
         Legend: <br/>
         Each node represents an article <br/>
