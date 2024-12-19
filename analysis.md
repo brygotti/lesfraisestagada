@@ -313,8 +313,33 @@ By studying the difference between the PageRank probability and the players clic
 
 However, it is important to note that we are only accounting for confounders in the structure of the graph, and not in the content of the articles. Variables like categories or titles might have a significant influence on the players behavior, and their distribution might change from one country to another. This is something that we cannot account for with the PageRank algorithm, and that we decided to ignore in this analysis.
 
-[TODO: put some graphs of the top countries with the PageRank metric]()
+</div>
+</div>
+</div>
 
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content">
+<div id="pagerank" class="carousel slide" data-bs-theme="dark">
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="height: 70vh">
+      <div class="graph-title"> Figure 10: PageRank vs players comparison </div>
+      <iframe class="graph" src="{{ '/graphs/topic_3/player_vs_pagerank.html' | relative_url }}" ></iframe>
+    </div>
+    <div class="carousel-item" style="height: 70vh">
+      <div class="graph-title"> Figure 11: PageRank difference </div>
+      <iframe class="graph" src="{{ '/graphs/topic_3/rank_diff.html' | relative_url }}" ></iframe>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#pagerank" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#pagerank" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 </div>
 </div>
 </div>
