@@ -91,7 +91,17 @@ This is the list of coutnries that you are allowed to output don't output anythi
 </div>
 </div>
 
+
 <div class="col mb-4">
+  <div class="card shadow" data-aos="fade-up">
+    <div class="content p-4" style="height: 70vh">
+          <div class="graph-title"> Figure 1: Proportion of articles assigned to a country</div>
+          <iframe class="graph" src="{{ '/graphs/preprocessing/proportion_country_assignment.html' | relative_url }}" ></iframe>
+    </div>
+  </div>
+</div>
+<!-- Keep previous heatmap carousel implementation in case -->
+<!-- <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
 <div class="content">
 <div id="carouselCountry" class="carousel slide" data-bs-theme="dark">
@@ -124,7 +134,7 @@ This is the list of coutnries that you are allowed to output don't output anythi
 </div>
 </div>
 </div>
-</div>
+</div> -->
 
 
 <div class="col mb-4">
