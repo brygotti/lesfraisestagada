@@ -152,6 +152,32 @@ As expected, we observe that those same central hub countries, that make up for 
 </div>
 
 
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content p-4" markdown="1">
+
+#### Distribution of countries among source and target articles
+This is a crucial analysis. Indeed, both the source and the target articles are not chosen by the player but are still counted as clicks in the way we calculated the click count variable. It is thus important to get an idea of the distribution of the countries among those pseudo-clicks to then take the decision of removing them in case the distribution of not uniform. 
+
+To investigate this we need to look at the finished paths in order to extract source and target articles. 
+
+<blockquote class="blockquote-content" markdown="1"> 
+<strong> In the following steps of the analysis the Start and Stop articles will be discarded from the click counts. </strong>
+</blockquote>
+
+</div>
+</div>
+</div>
+
+<div class="col mb-4" id="plot1">
+  <div class="card shadow" data-aos="fade-up">
+    <div class="content p-4">
+      <div class="graph-title"> Figure 6: Dead end countries </div>
+      <iframe class="graph" src="{{ '/graphs/topic_2/start_stop_count.html' | relative_url }}"></iframe>
+    </div>
+  </div>
+</div>
+
 
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
@@ -206,9 +232,22 @@ But, can we rationally explain a differentially distributed click count? Are the
 <div class="content p-4" markdown="1">
 
 
-#### Dead ends analysis
+### What do we call a dead-end ?
 
-[TODO: write that]()
+Dead ends in the context of Wikipedia navigation are articles that players encounter but struggle to move forward from, leading to either backtracking or abandoning the path altogether. Understanding dead ends provides valuable insight into user behavior, article connectivity, and potential biases in navigation patterns. By identifying these points of friction, we can better interpret how graph structures and content influence player decisions.
+
+In this analysis, we will:
+1. **Identify countries as potential dead ends based on click counts and mean failure ratio (unique).** Are highly connected countries inherently more prone to becoming dead ends due to visibility and accessibility? Or are less-connected countries genuinely more challenging for navigation?
+2. **Examine last articles in unfinished paths.** Which countries frequently appear at the end of failed navigation attempts? What does scaling these occurrences by outgoing links reveal about genuine dead ends versus highly connected hubs?
+3. **Analyze backtracking behavior.** What countries or articles trigger backtracking, and how does scaling highlight less obvious dead ends that trap players?
+<!-- 4. **Explore the relationship between start/stop countries and back-click rates.** Do certain countries cause players to abandon paths more frequently, and how does this change depending on their position in the navigation sequence? -->
+
+
+#### 1. Spotting Dead Ends Through Click Counts and Mean Failure Ratio
+In this part, we sort the countries based on their click count and unique mean failure ratio. To calculate the unique failure ratio, we count each occurrence of a country in unfinished paths only once. This approach eliminates circular patterns and repeated entries, ensuring a clearer and more accurate representation of how often each country contributes to navigation failures.
+
+Uh oh, this plot might be biased. Not only has the United States received an overwhelmingly high number of clicks, but it also has significantly more outgoing links (16,338) than other countries. This likely inflates its visibility and accessibility, making it appear more frequently in player paths. Familiarity bias (e.g., cultural or linguistic factors) further skews the data toward countries like the US and UK.
+To reduce this bias, we scale the number of clicks by the sum of outgoing links per country. This reveals a more nuanced picture, where less-connected countries such as Greenland, Bolivia, Brazil emerge as significant dead ends. Scaling sheds light on genuine navigation patterns, helping us differentiate between structural biases and true player challenges.
 
 </div>
 </div>
@@ -217,20 +256,56 @@ But, can we rationally explain a differentially distributed click count? Are the
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 6: Start and stop articles count </div>
-      <iframe class="graph" src="{{ '/graphs/topic_1/top_10_countries_start_stop.html' | relative_url }}"></iframe>
+      <div class="graph-title"> TITLEEE </div>
+      <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis1.html' | relative_url }}"></iframe>
     </div>
   </div>
+</div>
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content p-4" markdown="1">
+
+#### 2. **Analyzing Last Article in Unfinished Paths: Which Countries Trap Players?**
+What happens when a player’s navigation ends unsuccessfully? By analyzing the last articles in unfinished paths, we identify which countries are the most frequent dead ends. Initially, highly connected countries like the United States dominate this list, reflecting their prominence in raw data.
+
+However, scaling by outgoing links tells a different story. Countries like Country1 and Country2 (doit re-run plot) emerge as true dead ends, suggesting specific navigational patterns or challenges that lead players to abandon these paths. These insights highlight the limitations of raw data in capturing genuine player behavior.
+
+
+</div>
+</div>
 </div>
 
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 7: Dead end countries </div>
-      <iframe class="graph" src="{{ '/graphs/top_country_dead_end_articles.html' | relative_url }}"></iframe>
+      <div class="graph-title"> TITLEEE </div>
+      <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis2.html' | relative_url }}"></iframe>
     </div>
   </div>
 </div>
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content p-4" markdown="1">
+
+#### 3. **Backtracking Behavior: What Leads Players to Retreat?**
+Before players give up, they often hit a point where they backtrack. By examining the most common articles preceding the “go back” action, we identify key friction points. Unsurprisingly, highly connected countries like the United States and United Kingdom dominate the raw data.
+
+Scaling by outgoing links, however, reveals less obvious dead ends. Countries like French Polynesia and Vatican City, despite their limited connectivity, frequently prompt backtracking. This suggests players feel stuck due to limited onward options, making these articles true navigation roadblocks.
+</div>
+</div>
+</div>
+
+<div class="col mb-4" id="plot1">
+  <div class="card shadow" data-aos="fade-up">
+    <div class="content p-4">
+      <div class="graph-title"> TITLEEE </div>
+      <iframe class="graph" src="{{ '/graphs/topic_1/dead_ends_analysis3.html' | relative_url }}"></iframe>
+    </div>
+  </div>
+</div>
+
 
 
 <div class="col mb-4">
@@ -240,7 +315,7 @@ But, can we rationally explain a differentially distributed click count? Are the
 
 #### Accounting for the influence of the graph
 
-As we saw in our first naive analysis, the click count metric, even when scaled by the number of articles per country or by the number of outgoing links, is not a good proxy for analyzing the players intentions. Indeed, it seems to be heavily influenced by the graph's structure. We will now explore how we can account for this influence and remove it as much as possible.
+As we saw in the two parts above, the click count metric, even when scaled by the number of articles per country or by the number of outgoing links, is still not a good enough proxy for analyzing the players intentions. Indeed, it seems to be heavily influenced by the graph's structure. We need something more advanced to account for this influence. So now let's jump into the next section !
 
 #### What variables influence the click count?
 
