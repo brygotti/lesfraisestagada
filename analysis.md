@@ -290,9 +290,9 @@ However, scaling by outgoing links tells a different story. Countries like Green
 <div class="content p-4" markdown="1">
 
 #### 3. **Backtracking Behavior: What Leads Players to Retreat?**
-Before players give up, they often hit a point where they backtrack. By examining the most common articles preceding the “go back” action, we identify key friction points. Unsurprisingly, highly connected countries like the United States and United Kingdom dominate the raw data.
+Before players give up, they often hit a point where they backtrack. By examining the most common articles preceding the “go back” action, we identify key friction points. Unsurprisingly, highly connected countries like the United States and the United Kingdom **again** dominate the raw data due to their frequent presence in navigation paths.
 
-Scaling by outgoing links, however, reveals less obvious dead ends. Countries like French Polynesia and Vatican City, despite their limited connectivity, frequently prompt backtracking. This suggests players feel stuck due to limited onward options, making these articles true navigation roadblocks.
+However, scaling by outgoing links uncovers a more nuanced picture. While prominent countries remain significant, others like South Africa, Italy, and Spain also emerge as frequent backtracking points. This highlights specific challenges players face in navigation, where even well-connected or moderately connected countries can become roadblocks, revealing the complexity of player decision-making beyond raw prominence.
 </div>
 </div>
 </div>
@@ -300,7 +300,7 @@ Scaling by outgoing links, however, reveals less obvious dead ends. Countries li
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> TITLEEE </div>
+      <div class="graph-title"> Figure 11: Top 10 Articles Before Backtracking: Raw vs. Scaled Occurrences in Unfinished Paths </div>
       <iframe class="graph" src="{{ '/graphs/topic_1/dead_ends_analysis3.html' | relative_url }}"></iframe>
     </div>
   </div>
