@@ -471,5 +471,3 @@ Interestingly, the bottom 10 countries in term of rank difference (figure 12) se
 </div>
 </div>
 </div>
-
-</div>
