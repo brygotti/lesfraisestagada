@@ -438,24 +438,11 @@ However, it is important to note that we are only accounting for confounders in 
 
 As we can see in the plot in figure 11, the player rank is very similar to the PageRank for the top 10 countries. This shows a strong influence from the graph structure on the players behavior. In figure 12, we subtract the PageRank from the player rank. With that, we are essentially doing a change of reference frame, now computing how much more (or less) often a player clicked on an article compared to a random player. The differences seem very small, but it is good to remember that they must be interpreted as probabilities. To make sure the difference is significant, we computed a chi-square test (the null hypothesis being that the player behaves exactly like a random walker), and the p-value was found to be very close to 0 (\\(p \ll 0.05\\)). This proves that although the players are highly influenced by the graph, they still have some intrinsic biases.
 
-Looking at the top 10 countries in term of rank difference (figure 12), we see that a lot of them were already present in the top 10 of the normalized click count: USA, South Africa, Greece or UK. This confirms the soundness of our earlier analysis. But given how the PageRank analysis accounts for a lot more confounders than the normalized click count, we will focus for the next part on countries that have a high enough rank difference to be considered as significant, that is: USA, South Africa, UK, Greece, Brazil, Mexico and Canada.
-
-Interestingly, the bottom 10 countries in term of rank difference (figure 12) seem to be made up of some pretty big players in the scientific world like France, China or India. So are players really attracted towards countries with high scientific knowledge production? Let us find out in the next section!
+Looking at the top 10 countries in term of rank difference (figure 12), we see that a lot of them were already present in the top 10 of the normalized click count: USA, South Africa, Greece or UK. This confirms the soundness of our earlier analysis. But given how the PageRank analysis accounts for a lot more confounders than the normalized click count, we will focus for the next part on countries that have a high enough rank difference to be considered as significant, that is: USA, South Africa, UK, Greece, Brazil, Mexico and Canada Interestingly, the bottom 10 countries in term of rank difference (figure 12) seem to be made up of some pretty big players in the scientific world like France, China or India.
 </div>
 </div>
 </div>
 
-<div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content p-4" markdown="1">
-
-#### Players behavior in the context of publications per country
-
-[TODO: write that]()
-
-</div>
-</div>
-</div>
 
 </div>
 
@@ -466,8 +453,11 @@ Interestingly, the bottom 10 countries in term of rank difference (figure 12) se
 
 #### Let's wrap up! 
 
-[TODO: write that]()
+We were able to show that the Wikipedia graph is accurately representing the world knowledge, and that the countries dominating the web are also the major world powers (i.e. USA, UK, China). Since, the Wikispeedia game is built on Wikipedia, it is biased toward countries producing the most publications. 
 
+Then, we focused on the behavior of players and tried to show that they are intrinsically biased toward some countries. A first naive analysis showed that the player's clicks are strikingly skewed towards the major world. But after scaling and accounting for multiple factors influencing players' behaviors all countries seem to be approximately equally represented in terms of clicks of players. We observe small preferences towards some countries but they are too small to be significant. This indicates that players are mostly biased due to the graph structure but do not have additional intrisic biases. 
+
+📢📢📢📢📢 The take home message here is: **a biased web makes you biased** !! 
 </div>
 </div>
 </div>
