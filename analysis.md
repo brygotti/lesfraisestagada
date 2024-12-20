@@ -11,7 +11,7 @@ title: Analysis
 
 #### A quick word about articles!
 
-As we said in the introduction, we want to associate each article to a country. But why does this actually make sense? Well, if we look at <a href="#carouselGraphArticles" data-bs-toggle="tooltip">figure 1 and 2</a> below, we can see that almost all atricles among the top 20 can be associated to a country (*e.g. English_language to England*). The same is true for the bottom 20 articles (*e.g. Afghan hound to Afghanistan*). 
+As we said in the introduction, we want to associate each article to a country. But why does this actually make sense? Well, if we hover our mouse over the nodes in <a href="#carouselGraphArticles" data-bs-toggle="tooltip">figure 1 and 2</a> below, we can see that almost all atricles among the top 20 can be associated to a country (*e.g. English_language to England*). The same is true for the bottom 20 articles (*e.g. Afghan hound to Afghanistan*). 
 
 This motivates our decision to analyze the distributions of those countries within the Wikipedia graph. In the end, we are interested in whether players of the Wikispeedia game really tend to click more on articles that are associated with western countries or if this feature is due to the properties of the Wikipedia graph itself. Let's dive into the analysis and see if we can conclude anything! 
 
@@ -32,7 +32,7 @@ This motivates our decision to analyze the distributions of those countries with
         Each node represents an article <br/>
         node color: darker if the article is clicked more aften in Wikispeedia <br/>
         edges: represent outgoing links found in the articles <br/>
-        <a href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">in and out-degree</a>
+        in degree and out degree: see<a href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">here</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -47,11 +47,11 @@ This motivates our decision to analyze the distributions of those countries with
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselWorld" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselGraphArticles" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselWorld" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselGraphArticles" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
