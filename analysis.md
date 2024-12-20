@@ -308,7 +308,9 @@ However, scaling by outgoing links uncovers, once more, a more nuanced picture. 
 </div>
 
 
-
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content p-4" markdown="1">
 
 #### Accounting for the influence of the graph
 
