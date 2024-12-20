@@ -233,7 +233,7 @@ But, can we rationally explain a differentially distributed click count? Are the
 
 #### Accounting for the influence of the graph
 
-As we saw in our first naive analysis, the click count metric, even when scaled by the number of articles per country or by the number of outgoinf links, is not a good proxy for analyzing the players intentions. Indeed, it seems to be heavily influenced by the graph's structure. We will now explore how we can account for this influence and remove it as much as possible.
+As we saw in our first naive analysis, the click count metric, even when scaled by the number of articles per country or by the number of outgoing links, is not a good proxy for analyzing the players intentions. Indeed, it seems to be heavily influenced by the graph's structure. We will now explore how we can account for this influence and remove it as much as possible.
 
 #### What variables influence the click count?
 
@@ -265,7 +265,7 @@ The natural thing to do would then be to simply extend the propensity score matc
 
 #### A simpler approach
 
-This means we need to consider something simpler. We will first analyze how much each variable influences the click count, and then manually normalize the click count by the variables that seem to have the most influence. This is a very naive approach, but it is the best we can do given the constraints of the problem. By doing a regression analysis, we found that the number of links leading into an article is highly positively correlated with the player's click counts (rho=0.78, R2=0.63).
+This means we need to consider something simpler. We will first analyze how much each variable influences the click count, and then manually normalize the click count by the variables that seem to have the most influence. This is a very naive approach, but it is the best we can do given the constraints of the problem. 
 
 </div>
 </div>
@@ -277,11 +277,11 @@ This means we need to consider something simpler. We will first analyze how much
 
 #### Normalizing the click count
 
-Given the results of the regression analysis, we will only consider two confounders, which seem to have the most influence on the click count: the number of articles per country and the in-degree of each article. We will define a new metric, the normalized click count: for each country, we will divide the total number of clicks made to articles of that country by the total in-degree of that country. Note that given the high correlation between the in-degree of a country and the number of articles in that country (the more articles, the more links to those articles), this new metric is essentially accounting for both confounders at once.
+By doing a regression analysis, we found that the number of links leading into an article is highly positively correlated with the player's click counts (rho=0.78, R2=0.63), we will thus only consider two confounders, which seem to have the most influence on the click count: the number of articles per country and the in-degree of each article. We will define a new metric, the normalized click count: for each country, we will divide the total number of clicks made to articles of that country by the total in-degree of that country. Note that given the high correlation between the in-degree of a country and the number of articles in that country (the more articles, the more links to those articles), this new metric is essentially accounting for both confounders at once.
 
 Although it might seem like the way we computed this new metric is quite arbitrary, it actually still makes a lot of sense: we are essentially counting, for a given country, the average number of clicks that a single link to that country receives.
 
-As we can see in the graph below, this already looks a lot more interesting. The top countries are no longer dominated by Western countries. We see countries like South Africa, Jordan or Mexico among the top. The USA is still pretty high (ending up at the second position), but it is now with Canada the only two Westerb countries left in the top 10.
+As we can see in the graph below, this already looks a lot more interesting. The top countries are no longer dominated by Western countries. We see countries like South Africa, Jordan or Mexico among the top. The USA is still pretty high (ending up at the second position), but it is now with Canada the only two Western countries left in the top 10.
 
 </div>
 </div>
@@ -361,6 +361,21 @@ Interestingly, the bottom 10 countries in term of rank difference (figure 12) se
 <div class="content p-4" markdown="1">
 
 #### Players behavior in the context of publications per country
+
+[TODO: write that]()
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content p-4" markdown="1">
+
+#### Let's wrap up! 
 
 [TODO: write that]()
 
