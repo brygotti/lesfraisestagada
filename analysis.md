@@ -172,7 +172,7 @@ To investigate this we need to look at the finished paths in order to extract so
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 6: Dead end countries </div>
+      <div class="graph-title"> Figure 6: Top Countries by Start and Stop Articles in Finished Paths</div>
       <iframe class="graph" src="{{ '/graphs/topic_2/start_stop_count.html' | relative_url }}"></iframe>
     </div>
   </div>
