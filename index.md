@@ -16,8 +16,6 @@ Today, content on the internet is still mostly skewed towards Western societies 
 </div>
 </div>
 
-<div class="row row-cols-1">
-
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
