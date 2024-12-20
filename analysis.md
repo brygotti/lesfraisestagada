@@ -301,7 +301,7 @@ However, scaling by outgoing links uncovers a more nuanced picture. While promin
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
       <div class="graph-title"> Figure 11: Top 10 Articles Before Backtracking: Raw vs. Scaled Occurrences in Unfinished Paths </div>
-      <iframe class="graph" src="{{ '/graphs/topic_1/dead_ends_analysis3.html' | relative_url }}"></iframe>
+      <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis3.html' | relative_url }}"></iframe>
     </div>
   </div>
 </div>
