@@ -85,7 +85,7 @@ With <a href="#pie" data-bs-toggle="tooltip">figure 3</a>, we get a first intuit
 <div class="col mb-4" id="pie">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 2: Proportion of articles per country in Wikispeedia (2007) </div>
+      <div class="graph-title"> Figure 3: Proportion of articles per country in Wikispeedia (2007) </div>
       <iframe class="graph" src="{{ '/graphs/topic_1/pie_plot_distribution_of_countries.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -190,9 +190,9 @@ Now, let us analyze the players' clicking behavior in the Wikispeedia game.
 
 As seen previously, there is a unequal distribution of articles in Wikipedia, some countries are more represented than others. But, are those countries clicked more often by players within the Wikispeedia game? Or are there other countries that are clicked more often? We will now investigate if we see a bias independent from the countries distribution and whether the click count can be a good approximation of player's intention. 
 
-To do so, a first naïve approach is simply to detect countries with higher click counts (<a href="#World_click_count" data-bs-toggle="tooltip">see figure 8</a>). With this approach, it seems that players are highly biased in their way to play Wikispeedia as some countries like United States, United Kingdom, and Australia are represented by enormous dots due to their higher click count while other are almost not visible on the map. Edges between countries represent game paths. Darker paths are the most used ones, among those we can see that paths linking United States to United Kingdom, Australia, France, China, Germany or Japan dominate. There also seems to be commonly used paths between different countries in Europe. 
+To do so, a first naïve approach is simply to detect countries with higher click counts (<a href="#World_click_count" data-bs-toggle="tooltip">see figure 7</a>). With this approach, it seems that players are highly biased in their way to play Wikispeedia as some countries like United States, United Kingdom, and Australia are represented by enormous dots due to their higher click count while other are almost not visible on the map. Edges between countries represent game paths. Darker paths are the most used ones, among those we can see that paths linking United States to United Kingdom, Australia, France, China, Germany or Japan dominate. There also seems to be commonly used paths between different countries in Europe. 
 
-However, a high click count can simply be due to the high number of articles associated to a particular country within the game. This does not necessarily tell us something about player's biases. Therefore, we rather focus on the ratio of click count divided by the number of articles to get a result closer to reality. On <a href="#World_click_count" data-bs-toggle="tooltip">figure 9</a>, we see an overrepresentation of some countries like Vatican city, Brazil, or South Africa which are different from the previous ones. Vatican city is a particular case in this dataset as there is only one article associated with this country so the click count is not influenced by the scaling. It could be considered as an outlier, not necesarilly indicating something about player's biases. Therefore, the scaled click count map indicates that part of a high click count can simply be explained by the high number of articles associated to a particular country. But scaling creates some artefacts like Vatican city so it does not seem to be the best approach. There appear to be another factor influencing the click count per country as some countries remain more represented than other even when considering a scaled version of the click count.
+However, a high click count can simply be due to the high number of articles associated to a particular country within the game. This does not necessarily tell us something about player's biases. Therefore, we rather focus on the ratio of click count divided by the number of articles to get a result closer to reality. On <a href="#World_click_count" data-bs-toggle="tooltip">figure 8</a>, we see an overrepresentation of some countries like Vatican city, Brazil, or South Africa which are different from the previous ones. Vatican city is a particular case in this dataset as there is only one article associated with this country so the click count is not influenced by the scaling. It could be considered as an outlier, not necesarilly indicating something about player's biases. Therefore, the scaled click count map indicates that part of a high click count can simply be explained by the high number of articles associated to a particular country. But scaling creates some artefacts like Vatican city so it does not seem to be the best approach. There appear to be another factor influencing the click count per country as some countries remain more represented than other even when considering a scaled version of the click count.
 
 But, can we rationally explain a differentially distributed click count? Are there other factors influcing the click count of player's? Onto the next topic to figure it out!
 
@@ -206,11 +206,11 @@ But, can we rationally explain a differentially distributed click count? Are the
 <div id="World_click_count" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="graph-title"> Figure 8: World map of the click count per country and game path between countries before scaling </div>
+      <div class="graph-title"> Figure 7: World map of the click count per country and game path between countries before scaling </div>
       <iframe class="graph" src="{{ '/graphs/topic_2/world_click_counts_before_scaling.html' | relative_url }}" ></iframe>
     </div>
     <div class="carousel-item">
-      <div class="graph-title"> Figure 9: World map of the click count per country and game path between countries after scaling </div>
+      <div class="graph-title"> Figure 8: World map of the click count per country and game path between countries after scaling </div>
       <iframe class="graph" src="{{ '/graphs/topic_2/world_click_counts_after_scaling.html' | relative_url }}" ></iframe>
     </div>
   </div>
@@ -279,7 +279,7 @@ However, scaling by outgoing links tells a different story. Countries like Green
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 10 : Top 10 Last Articles in Unfinished Paths: Raw vs. Scaled Occurrences by Outgoing Links </div>
+      <div class="graph-title"> Figure 10: Top 10 Last Articles in Unfinished Paths: Raw vs. Scaled Occurrences by Outgoing Links </div>
       <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis2.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -372,7 +372,7 @@ As we can see in the graph below, this already looks a lot more interesting. The
 <div class="col mb-4">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 10: World map of the normalized click count per country </div>
+      <div class="graph-title"> Figure 12: World map of the normalized click count per country </div>
       <iframe class="graph" src="{{ '/graphs/topic_3/normalized_click_counts.html' | relative_url }}" ></iframe>
     </div>
   </div>
@@ -402,11 +402,11 @@ However, it is important to note that we are only accounting for confounders in 
 <div id="pagerank" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="graph-title"> Figure 11: PageRank vs players comparison </div>
+      <div class="graph-title"> Figure 13: PageRank vs players comparison </div>
       <iframe class="graph" src="{{ '/graphs/topic_3/player_vs_pagerank.html' | relative_url }}" ></iframe>
     </div>
     <div class="carousel-item">
-      <div class="graph-title"> Figure 12: PageRank difference (Player rank minus PageRank) </div>
+      <div class="graph-title"> Figure 14: PageRank difference (Player rank minus PageRank) </div>
       <iframe class="graph" src="{{ '/graphs/topic_3/rank_diff.html' | relative_url }}" id="rank_diff"></iframe>
     </div>
   </div>
@@ -436,9 +436,9 @@ However, it is important to note that we are only accounting for confounders in 
 
 #### PageRank analysis
 
-As we can see in the plot in figure 11, the player rank is very similar to the PageRank for the top 10 countries. This shows a strong influence from the graph structure on the players behavior. In figure 12, we subtract the PageRank from the player rank. With that, we are essentially doing a change of reference frame, now computing how much more (or less) often a player clicked on an article compared to a random player. The differences seem very small, but it is good to remember that they must be interpreted as probabilities. To make sure the difference is significant, we computed a chi-square test (the null hypothesis being that the player behaves exactly like a random walker), and the p-value was found to be very close to 0 (\\(p \ll 0.05\\)). This proves that although the players are highly influenced by the graph, they still have some intrinsic biases.
+As we can see in the plot in figure 13, the player rank is very similar to the PageRank for the top 10 countries. This shows a strong influence from the graph structure on the players behavior. In figure 14, we subtract the PageRank from the player rank. With that, we are essentially doing a change of reference frame, now computing how much more (or less) often a player clicked on an article compared to a random player. The differences seem very small, but it is good to remember that they must be interpreted as probabilities. To make sure the difference is significant, we computed a chi-square test (the null hypothesis being that the player behaves exactly like a random walker), and the p-value was found to be very close to 0 (\\(p \ll 0.05\\)). This proves that although the players are highly influenced by the graph, they still have some intrinsic biases.
 
-Looking at the top 10 countries in term of rank difference (figure 12), we see that a lot of them were already present in the top 10 of the normalized click count: USA, South Africa, Greece or UK. This confirms the soundness of our earlier analysis. But given how the PageRank analysis accounts for a lot more confounders than the normalized click count, we will focus for the next part on countries that have a high enough rank difference to be considered as significant, that is: USA, South Africa, UK, Greece, Brazil, Mexico and Canada Interestingly, the bottom 10 countries in term of rank difference (figure 12) seem to be made up of some pretty big players in the scientific world like France, China or India.
+Looking at the top 10 countries in term of rank difference (figure 14), we see that a lot of them were already present in the top 10 of the normalized click count: USA, South Africa, Greece or UK. This confirms the soundness of our earlier analysis. But given how the PageRank analysis accounts for a lot more confounders than the normalized click count, we will focus for the next part on countries that have a high enough rank difference to be considered as significant, that is: USA, South Africa, UK, Greece, Brazil, Mexico and Canada Interestingly, the bottom 10 countries in term of rank difference (figure 14) seem to be made up of some pretty big players in the scientific world like France, China or India.
 </div>
 </div>
 </div>
@@ -455,9 +455,11 @@ Looking at the top 10 countries in term of rank difference (figure 12), we see t
 
 We were able to show that the Wikipedia graph is accurately representing the world knowledge, and that the countries dominating the web are also the major world powers (i.e. USA, UK, China). Since, the Wikispeedia game is built on Wikipedia, it is biased toward countries producing the most publications. 
 
-Then, we focused on the behavior of players and tried to show that they are intrinsically biased toward some countries. A first naive analysis showed that the player's clicks are strikingly skewed towards the major world. But after scaling and accounting for multiple factors influencing players' behaviors all countries seem to be approximately equally represented in terms of clicks of players. We observe small preferences towards some countries but they are too small to be significant. This indicates that players are mostly biased due to the graph structure but do not have additional intrisic biases. 
+Then, we focused on the behavior of players and tried to show that they are intrinsically biased toward some countries. A first naive analysis showed that the player's clicks are strikingly skewed towards the major world. But after scaling and accounting for multiple factors influencing players' behaviors all countries seem to be approximately equally represented in terms of clicks of players. We observe small preferences towards some countries but they are too small to be significant. This indicates that players are mostly biased due to the graph structure but do not have additional intrisic biases. The passive hypothesis is therby validated.
 
-📢📢📢📢📢 The take home message here is: **a biased web makes you biased** !! 
+
+
+📢📢📢📢📢 The take home message here is: **a biased web makes you biased** 📢📢📢📢📢!! 
 </div>
 </div>
 </div>
