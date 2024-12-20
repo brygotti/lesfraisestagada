@@ -275,12 +275,12 @@ However, scaling by outgoing links tells a different story. Countries like Green
 Before players give up, they often hit a point where they backtrack. By examining the most common articles preceding the “go back” action, we identify key friction points. Unsurprisingly, highly connected countries like the United States and the United Kingdom **again** dominate the raw data due to their frequent presence in navigation paths.
 
 However, scaling by outgoing links uncovers, once more, a more nuanced picture. While prominent countries remain significant, others like South Africa, Italy, and Spain also emerge as frequent backtracking points. This highlights specific challenges players face in navigation, where even well-connected or moderately connected countries can become roadblocks, revealing the complexity of player decision-making beyond raw prominence. We observe a relatively similar distribution between last country articles and backtracked country articles, suggesting that the same navigational patterns and challenges that lead players to abandon paths often also influence their decision to retreat, emphasizing the importance of connectivity and link structure in shaping player behavior.
-
+<!-- 
 </div>
 </div>
 </div>
 
-<!-- <div class="col mb-4" id="plot1">
+<div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
       <div class="graph-title"> Figure 10: Top 10 last articles in unfinished paths: raw vs. scaled occurrences by outgoing links </div>
