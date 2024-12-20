@@ -11,9 +11,9 @@ title: Analysis
 
 #### A quick word about articles!
 
-As we said in the introduction, we want to associate each article to a country. But why does this actually make sense? Well, if we hover our mouse over the nodes in <a href="#carouselGraphArticles" data-bs-toggle="tooltip">figure 1 and 2</a> below, we can see that almost all atricles among the top 20 can be associated to a country (*e.g. English_language to England*). The same is true for the bottom 20 articles (*e.g. Afghan hound to Afghanistan*). 
+As we said in the introduction, we want to associate each article to a country. But why does this actually make sense? Well, if we hover our mouse over the nodes in <a href="#carouselGraphArticles" data-bs-toggle="tooltip">figure 1 and 2</a> below, we can see that almost all atricles among the top 20 can be associated to a country (*e.g. English_language to England*). The same is true for the bottom 20 articles (*e.g. Afghan hound to Afghanistan*). But we see that the most clicked articles are densely connected with each other, whereas the least clicked articles are not.  
 
-This motivates our decision to analyze the distributions of those countries within the Wikipedia graph. In the end, we are interested in whether players of the Wikispeedia game really tend to click more on articles that are associated with western countries or if this feature is due to the properties of the Wikipedia graph itself. Let's dive into the analysis and see if we can conclude anything! 
+This motivates our decision to analyze the Wikispeedia game in terms of countries. In the end, we are interested in whether players of the Wikispeedia game really tend to click more on articles that are associated with western countries or if this feature is due to the properties of the Wikipedia graph itself. Let's dive into the analysis and see if we can conclude anything! 
 
 </div>
 </div>
@@ -28,22 +28,20 @@ This motivates our decision to analyze the distributions of those countries with
       <div class="graph-title"> Figure 1: Connectivity of most clicked articles </div>
       <iframe class="graph" src="{{ 'graphs/topic_1/most_used_articles_graph.html' | relative_url }}"></iframe>
       <div style="padding: 10px;">
-        Legend: <br/>
-        Each node represents an article <br/>
-        node color: darker if the article is clicked more aften in Wikispeedia <br/>
-        edges: represent outgoing links found in the articles <br/>
-        in degree and out degree: see<a href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">here</a>
+        Legend: Each node represents an article <br/>
+        <strong>Node color</strong>: darker if the article is clicked more often in Wikispeedia <br/>
+        <strong>Edges</strong>: represent outgoing links found in the articles <br/>
+        <strong>In degree and out degree</strong>: see <a href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">here</a>
       </div>
     </div>
     <div class="carousel-item">
       <div class="graph-title"> Figure 2: Connectivity of least clicked articles </div>
       <iframe class="graph" src="{{ 'graphs/topic_1/least_used_articles_graph.html' | relative_url }}"></iframe>
       <div style="padding: 10px;">
-        Legend: <br/>
-        Each node represents an article <br/>
-        node color: darker if the article is clicked more aften in Wikispeedia <br/>
-        edges: represent outgoing links found in the articles <br/>
-        in degree and out degree: see <a href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">here</a>
+        Legend: Each node represents an article<br/>
+        <strong>Node color</strong>: darker if the article is clicked more often in Wikispeedia <br/>
+        <strong>Edges</strong>: represent outgoing links found in the articles <br/>
+        <strong>In degree and out degree</strong>: see <a href="https://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">here</a>
       </div>
     </div>
   </div>
@@ -66,18 +64,18 @@ This motivates our decision to analyze the distributions of those countries with
 
 #### Which countries are most represented in the Wikipedia graph?
 
-Now that all (most) articles are associated to a country, we can look at the distribution of those countries. Is there a country that is associated to more articles? (we have our little idea haha but let's check). 
+Now that all (most) articles are associated to a country, we can look at the distribution of those countries. Is there a country that is associated to more articles? (we have our little idea, but let's check). 
 
-We see that 8 countries make up for <sup>1</sup>/<sub>2</sub> of the articles in Wikipedia, namely the **US**, **UK**, **Australia**, **France**, **Germany**, **Italy**, **India** and **China**. Those are all in the top 10 of countries that publish the most!!
+We see that 8 countries make up for <sup>1</sup>/<sub>2</sub> of the articles in Wikipedia, namely the **US**, **UK**, **Australia**, **France**, **Germany**, **Italy**, **India** and **China**. Those are all in the top 10 of countries that publish the most (see [here](https://www.scimagojr.com/countryrank.php?year=2007)!)!
 
-With *Figure 2*, we get a first intuition of the cultural bias that is present in the Wikipeedia graph: countries that publish most are also represented by more articles. When players play on this already biased graph, they will obviously click most on articles from those countries. So, later, when we analyze the behavior of the players, we will have to keep this in mind and normalize the click counts of the players by the number of articles per country! But this is for later, let's go on here!
+With <a href="#pie" data-bs-toggle="tooltip">figure 3</a>, we get a first intuition of the cultural bias that is present in the Wikipeedia graph: countries that publish most are also represented by more articles. When players play on this already biased graph, they will obviously click most on articles from those countries. So, later, when we analyze the behavior of the players, we will have to keep this in mind and normalize the click counts of the players by the number of articles per country! But this is for later, let's go on here!
 
 </div>
 </div>
 </div>
 
 
-<div class="col mb-4" id="plot1">
+<div class="col mb-4" id="pie">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
       <div class="graph-title"> Figure 2: Proportion of articles per country in Wikispeedia (2007) </div>
@@ -96,7 +94,7 @@ Let's now look at the connectivity between countries.
     Two countries are said to be <strong>connected</strong> if at least one article from the first country contains a link to an article associated to the other country.
 </blockquote>
 
-We contruct a graph of the Wikispeedia network overlayed with a world map for better visualization of the countries' importance. On this graph (bellow), we have: 
+We contruct a graph of the Wikispeedia network overlayed with a world map for better visualization of the countries' importance. On this graph (<a href="#world-map-wikipedia" data-bs-toggle="tooltip">figure 4</a>), we have: 
 - each node is a country 
 - the size and color of a node is proportional to the number of articles associtated to that node
 - edges represent connnections between countries in the Wikipedia graph
@@ -109,10 +107,10 @@ We also see that those same countries are central hubs of the network. They are 
 </div>
 </div>
 
-<div class="col mb-4" id="plot1">
+<div class="col mb-4" id="world-map-wikipedia">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 3: World map of connections between countries </div>
+      <div class="graph-title"> Figure 4: World map of connections between countries </div>
       <iframe class="graph" src="{{ '/graphs/topic_1/world_graph_map.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -137,10 +135,10 @@ As expected, we observe that those same central hub countries, that make up for 
 </div>
 
 
-<div class="col mb-4" id="plot1">
+<div class="col mb-4" id="node-degrees">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 4: Node degree of countries </div>
+      <div class="graph-title"> Figure 5: Node degree of countries </div>
       <iframe class="graph" src="{{ '/graphs/topic_1/bar_plot_distribution_of_degrees.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -152,48 +150,18 @@ As expected, we observe that those same central hub countries, that make up for 
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
-#### Dead ends analysis
-
-[TODO: write that]()
-
-</div>
-</div>
-</div>
-
-<div class="col mb-4" id="plot1">
-  <div class="card shadow" data-aos="fade-up">
-    <div class="content p-4">
-      <div class="graph-title"> Figure 5: Start and stop articles count </div>
-      <iframe class="graph" src="{{ '/graphs/topic_1/top_10_countries_start_stop.html' | relative_url }}"></iframe>
-    </div>
-  </div>
-</div>
-
-<div class="col mb-4" id="plot1">
-  <div class="card shadow" data-aos="fade-up">
-    <div class="content p-4">
-      <div class="graph-title"> Figure 6: Dead end countries </div>
-      <iframe class="graph" src="{{ '/graphs/top_country_dead_end_articles.html' | relative_url }}"></iframe>
-    </div>
-  </div>
-</div>
-
-
-<div class="col mb-4">
-<div class="card shadow" data-aos="fade-up">
-<div class="content p-4" markdown="1">
 
 #### Naive analysis of players click count
 
 Now, let us analyze the players' clicking behavior in the Wikispeedia game.
 
-As seen previously, there is a unequal distribution of articles in Wikipedia, some countries are more represented than others. But, are those countries clicked more often by players within the Wikispeedia game? Or is there other countries that are clicked more often? We will now investigate if we see a bias independent from the countries distribution and whether the click count can be a good approximation of player's intention. 
+As seen previously, there is a unequal distribution of articles in Wikipedia, some countries are more represented than others. But, are those countries clicked more often by players within the Wikispeedia game? Or are there other countries that are clicked more often? We will now investigate if we see a bias independent from the countries distribution and whether the click count can be a good approximation of player's intention. 
 
-To do so, a first naïve approach is simply to detect countries with higher click counts (see Figure 7). With this approach, it seems that players are highly biased in their way to play Wikispeedia as some countries like United States, United Kingdom, and Australia are represented by enormous dots due to their higher click count while other are almost not visible on the map. Edges between countries represent game paths. Darker paths are the most used ones, among those we can see that paths linking United States to United Kingdom, Australia, France, China, Germany or Japan dominate. There also seems to be commonly used paths between different countries in Europe. 
+To do so, a first naïve approach is simply to detect countries with higher click counts (<a href="#World_click_count" data-bs-toggle="tooltip">see figure 8</a>). With this approach, it seems that players are highly biased in their way to play Wikispeedia as some countries like United States, United Kingdom, and Australia are represented by enormous dots due to their higher click count while other are almost not visible on the map. Edges between countries represent game paths. Darker paths are the most used ones, among those we can see that paths linking United States to United Kingdom, Australia, France, China, Germany or Japan dominate. There also seems to be commonly used paths between different countries in Europe. 
 
-However, a high click count can simply be due to the high number of articles associated to a particular country within the game. This does not necessarily tell us something about player's biases. Therefore, we rather focus on the ratio of click count divided by the number of articles to get a result closer to reality. On Figure 8, we see an overrepresentation of some countries like Vatican city, Brazil, or South Africa which are different from the previous ones. Vatican city is a particular case in this dataset as there is only one article associated with this country so the click count is not influenced by the scaling. It could be considered as an outlier, not necesarilly indicating something about player's biases. Therefore, the scaled click count map indicates that part of a high click count can simply be explained by the high number of articles associated to a particular country. But scaling creates some artefacts like Vatican city so it does not seem to be the best approach. There appear to be another factor influencing the click count per country as some countries remain more represented than other even when considering a scaled version of the click count.
+However, a high click count can simply be due to the high number of articles associated to a particular country within the game. This does not necessarily tell us something about player's biases. Therefore, we rather focus on the ratio of click count divided by the number of articles to get a result closer to reality. On <a href="#World_click_count" data-bs-toggle="tooltip">figure 9</a>, we see an overrepresentation of some countries like Vatican city, Brazil, or South Africa which are different from the previous ones. Vatican city is a particular case in this dataset as there is only one article associated with this country so the click count is not influenced by the scaling. It could be considered as an outlier, not necesarilly indicating something about player's biases. Therefore, the scaled click count map indicates that part of a high click count can simply be explained by the high number of articles associated to a particular country. But scaling creates some artefacts like Vatican city so it does not seem to be the best approach. There appear to be another factor influencing the click count per country as some countries remain more represented than other even when considering a scaled version of the click count.
 
-But, can we rationally explain a differentially distributed click count? Is there other factors influcing the click count than simply player's biases? Onto the next topic to figure it out!
+But, can we rationally explain a differentially distributed click count? Are there other factors influcing the click count of player's? Onto the next topic to figure it out!
 
 </div>
 </div>
@@ -205,11 +173,11 @@ But, can we rationally explain a differentially distributed click count? Is ther
 <div id="World_click_count" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="graph-title"> Figure 7: World map of the click count per country and game path between countries before scaling </div>
+      <div class="graph-title"> Figure 8: World map of the click count per country and game path between countries before scaling </div>
       <iframe class="graph" src="{{ '/graphs/topic_2/world_click_counts_before_scaling.html' | relative_url }}" ></iframe>
     </div>
     <div class="carousel-item">
-      <div class="graph-title"> Figure 8: World map of the click count per country and game path between countries after scaling </div>
+      <div class="graph-title"> Figure 9: World map of the click count per country and game path between countries after scaling </div>
       <iframe class="graph" src="{{ '/graphs/topic_2/world_click_counts_after_scaling.html' | relative_url }}" ></iframe>
     </div>
   </div>
@@ -230,9 +198,42 @@ But, can we rationally explain a differentially distributed click count? Is ther
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
+
+#### Dead ends analysis
+
+[TODO: write that]()
+
+</div>
+</div>
+</div>
+
+<div class="col mb-4" id="plot1">
+  <div class="card shadow" data-aos="fade-up">
+    <div class="content p-4">
+      <div class="graph-title"> Figure 6: Start and stop articles count </div>
+      <iframe class="graph" src="{{ '/graphs/topic_1/top_10_countries_start_stop.html' | relative_url }}"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="col mb-4" id="plot1">
+  <div class="card shadow" data-aos="fade-up">
+    <div class="content p-4">
+      <div class="graph-title"> Figure 7: Dead end countries </div>
+      <iframe class="graph" src="{{ '/graphs/top_country_dead_end_articles.html' | relative_url }}"></iframe>
+    </div>
+  </div>
+</div>
+
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content p-4" markdown="1">
+
+
 #### Accounting for the influence of the graph
 
-As we saw in our first naive analysis, the click count metric, even when scaled by the number of articles per country, is not a good proxy for analyzing the players intentions. Indeed, it seems to be heavily influenced by the graph's structure. We will now explore how we can account for this influence and remove it as much as possible.
+As we saw in our first naive analysis, the click count metric, even when scaled by the number of articles per country or by the number of outgoinf links, is not a good proxy for analyzing the players intentions. Indeed, it seems to be heavily influenced by the graph's structure. We will now explore how we can account for this influence and remove it as much as possible.
 
 #### What variables influence the click count?
 
@@ -248,9 +249,9 @@ As seen before, countries with more articles have more clicks. This is very much
 
 #### Ideal rebalancing
 
-To make sure we account for as much confounders as possible, the ideal thing to do would be to set up some kind of propensity score matching. But how? Usually, propensity score matching is done between two groups that are compared in the experiment: a treatment group and a control group. However, in our case, we are comparing click counts across countries, meaning we do not have 2, but rather 249 groups that are compared with one another (one group per country).
+To make sure we account for as much confounders as possible, the ideal thing to do would be to set up some kind of propensity score matching. But how? Usually, propensity score matching is done between two groups that are compared in the experiment: a treatment group and a control group. However, in our case, we are comparing click counts across countries, meaning we do not have 2, but rather a maximum of 195 groups that are compared with one another (one group per country, indeed, only 195 out of the 249 llm classified countries actually have articles associated to them).
 
-The natural thing to do would then be to simply extend the propensity score matching to the 249 groups! Instead of looking for pairs of articles that have a similar propensity score, we would look for k-tuples, with k being the number of countries. But there are two issues with this approach:
+The natural thing to do would then be to simply extend the propensity score matching to the 195 groups! Instead of looking for pairs of articles that have a similar propensity score, we would look for k-tuples, with k being the number of countries. But there are two issues with this approach:
 1. Propensity score matching requires an algorithm that finds maximum cardinality matchings. Although there exists such algorithms that run in polynomial time when k=2, when k>2 <a href="https://en.wikipedia.org/wiki/3-dimensional_matching#Decision_problem">the problem is NP-hard</a>, meaning all currently known algorithms for this problem run in exponential time (pretty bad).
 2. Alright, but our dataset is not that big! Couldn't we just use an exponential time algorithm and be done with it? Well, another problem would then arise: for a lot of countries, the number of articles assigned to them is 1. This means that we would only be able to create a single k-tuple, and then we would already have exhausted all articles for a lot of countries. That would mean that our rebalanced dataset would contain only one article per country, which of course is not enough to make any kind of analysis.
 
@@ -264,11 +265,7 @@ The natural thing to do would then be to simply extend the propensity score matc
 
 #### A simpler approach
 
-This means we need to consider something simpler. We will first analyze how much each variable influences the click count, and then manually normalize the click count by the variables that seem to have the most influence. This is a very naive approach, but it is the best we can do given the constraints of the problem.
-
-#### Regression analysis
-
-[TODO: explain regression analysis]()
+This means we need to consider something simpler. We will first analyze how much each variable influences the click count, and then manually normalize the click count by the variables that seem to have the most influence. This is a very naive approach, but it is the best we can do given the constraints of the problem. By doing a regression analysis, we found that the number of links leading into an article is highly positively correlated with the player's click counts (rho=0.78, R2=0.63).
 
 </div>
 </div>
@@ -293,7 +290,7 @@ As we can see in the graph below, this already looks a lot more interesting. The
 <div class="col mb-4">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 9: World map of the normalized click count per country </div>
+      <div class="graph-title"> Figure 10: World map of the normalized click count per country </div>
       <iframe class="graph" src="{{ '/graphs/topic_3/normalized_click_counts.html' | relative_url }}" ></iframe>
     </div>
   </div>
@@ -323,11 +320,11 @@ However, it is important to note that we are only accounting for confounders in 
 <div id="pagerank" class="carousel slide" data-bs-theme="dark">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="graph-title"> Figure 10: PageRank vs players comparison </div>
+      <div class="graph-title"> Figure 11: PageRank vs players comparison </div>
       <iframe class="graph" src="{{ '/graphs/topic_3/player_vs_pagerank.html' | relative_url }}" ></iframe>
     </div>
     <div class="carousel-item">
-      <div class="graph-title"> Figure 11: PageRank difference (Player rank minus PageRank) </div>
+      <div class="graph-title"> Figure 12: PageRank difference (Player rank minus PageRank) </div>
       <iframe class="graph" src="{{ '/graphs/topic_3/rank_diff.html' | relative_url }}" ></iframe>
     </div>
   </div>
@@ -350,11 +347,11 @@ However, it is important to note that we are only accounting for confounders in 
 
 #### PageRank analysis
 
-As we can see in the plot in figure 10, the player rank is very similar to the PageRank for the top 10 countries. This shows a strong influence from the graph structure on the players behavior. In figure 11, we subtract the PageRank from the player rank. With that, we are essentially doing a change of reference frame, now computing how much more (or less) often a player clicked on an article compared to a random player. The differences seem very small, but it is good to remember that they must be interpreted as probabilities. To make sure the difference is significant, we computed a chi-square test (the null hypothesis being that the player behaves exactly like a random walker), and the p-value was found to be very close to 0 (\\(p \ll 0.05\\)). This proves that although the players are highly influenced by the graph, they still have some intrinsic biases.
+As we can see in the plot in figure 11, the player rank is very similar to the PageRank for the top 10 countries. This shows a strong influence from the graph structure on the players behavior. In figure 12, we subtract the PageRank from the player rank. With that, we are essentially doing a change of reference frame, now computing how much more (or less) often a player clicked on an article compared to a random player. The differences seem very small, but it is good to remember that they must be interpreted as probabilities. To make sure the difference is significant, we computed a chi-square test (the null hypothesis being that the player behaves exactly like a random walker), and the p-value was found to be very close to 0 (\\(p \ll 0.05\\)). This proves that although the players are highly influenced by the graph, they still have some intrinsic biases.
 
-Looking at the top 10 countries in term of rank difference (figure 11), we see that a lot of them were already present in the top 10 of the normalized click count: USA, South Africa, Greece or UK. This confirms the soundness of our earlier analysis. But given how the PageRank analysis accounts for a lot more confounders than the normalized click count, we will focus for the next part on countries that have a high enough rank difference to be considered as significant, that is: USA, South Africa, UK, Greece, Brazil, Mexico and Canada.
+Looking at the top 10 countries in term of rank difference (figure 12), we see that a lot of them were already present in the top 10 of the normalized click count: USA, South Africa, Greece or UK. This confirms the soundness of our earlier analysis. But given how the PageRank analysis accounts for a lot more confounders than the normalized click count, we will focus for the next part on countries that have a high enough rank difference to be considered as significant, that is: USA, South Africa, UK, Greece, Brazil, Mexico and Canada.
 
-Interestingly, the bottom 10 countries in term of rank difference (figure 11) seem to be made up of some pretty big players in the scientific world like France, China or India. So are players really attracted towards countries with high scientific knowledge production? Let us find out in the next section!
+Interestingly, the bottom 10 countries in term of rank difference (figure 12) seem to be made up of some pretty big players in the scientific world like France, China or India. So are players really attracted towards countries with high scientific knowledge production? Let us find out in the next section!
 </div>
 </div>
 </div>

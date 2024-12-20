@@ -201,7 +201,7 @@ As a reminder, a *path* corresponds to the sequence of articles that a player cl
 <div class="content p-4" markdown="1">
 
 #### Quantification of knowledge production 
-We are using an external dataset from [Scimago Journal and Country Rank (SJR)](https://www.scimagojr.com/countryrank.php?year=2007) to approximate the worldwide knowledge production. SJR provides various rankings of journals or countries based on Scopus data [[4]](https://www.elsevier.com/products/scopus?dgcid=RN_AGCM_Sourced_300005030). For example, it contains the number of documents, the number of citable documents, or the number of citations per country and per year. In this study, we focus on the data from 2007 as the Wikispeedia game is made from articles published at this time. And, we keep exclusively the number of citable documents per country as it seems like the best proxy for knowledge production. 
+We are using an external dataset from [Scimago Journal and Country Rank (SJR)](https://www.scimagojr.com/countryrank.php?year=2007) to approximate the worldwide knowledge production. SJR provides various rankings of journals or countries based on Scopus data [[4]](https://www.elsevier.com/products/scopus?dgcid=RN_AGCM_Sourced_300005030). For example, it contains the number of documents, the number of citable documents, or the number of citations per country and per year. In this project, we focus on the data from 2007 as the Wikispeedia game based on the Wikipedia data from that year. And, we keep exclusively the number of citable documents per country as it seems like the best proxy for knowledge production. 
 
 </div>
 </div>
