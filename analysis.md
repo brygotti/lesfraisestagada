@@ -256,7 +256,7 @@ To reduce this bias, we scale the number of clicks by the sum of outgoing links 
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> TITLEEE </div>
+      <div class="graph-title"> Figure 9: Top 10 Countries by Click Count and Mean Failure Ratio (Scaled vs. Unscaled) </div>
       <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis1.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -279,7 +279,7 @@ However, scaling by outgoing links tells a different story. Countries like Count
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> TITLEEE </div>
+      <div class="graph-title"> Figure 10 : Top 10 Last Articles in Unfinished Paths: Raw vs. Scaled Occurrences by Outgoing Links </div>
       <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis2.html' | relative_url }}"></iframe>
     </div>
   </div>
