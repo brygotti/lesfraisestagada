@@ -256,7 +256,7 @@ To reduce this bias, we scale the number of clicks by the sum of outgoing links 
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> TITLEEE </div>
+      <div class="graph-title"> Figure 9: Top 10 Countries by Click Count and Mean Failure Ratio (Scaled vs. Unscaled) </div>
       <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis1.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -269,7 +269,7 @@ To reduce this bias, we scale the number of clicks by the sum of outgoing links 
 #### 2. **Analyzing Last Article in Unfinished Paths: Which Countries Trap Players?**
 What happens when a player’s navigation ends unsuccessfully? By analyzing the last articles in unfinished paths, we identify which countries are the most frequent dead ends. Initially, highly connected countries like the United States dominate this list, reflecting their prominence in raw data.
 
-However, scaling by outgoing links tells a different story. Countries like Country1 and Country2 (doit re-run plot) emerge as true dead ends, suggesting specific navigational patterns or challenges that lead players to abandon these paths. These insights highlight the limitations of raw data in capturing genuine player behavior.
+However, scaling by outgoing links tells a different story. Countries like Greenland, Bolivia, and South Africa emerge as true dead ends, suggesting specific navigational patterns or challenges that lead players to abandon these paths. These insights highlight the limitations of raw data in capturing genuine player behavior.
 
 
 </div>
@@ -279,7 +279,7 @@ However, scaling by outgoing links tells a different story. Countries like Count
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> TITLEEE </div>
+      <div class="graph-title"> Figure 10 : Top 10 Last Articles in Unfinished Paths: Raw vs. Scaled Occurrences by Outgoing Links </div>
       <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis2.html' | relative_url }}"></iframe>
     </div>
   </div>
