@@ -162,7 +162,7 @@ This is a crucial analysis. Indeed, both the source and the target articles are 
 To investigate this we need to look at the finished paths in order to extract source and target articles. 
 
 <blockquote class="blockquote-content" markdown="1"> 
-<strong> In the following steps of the analysis the Start and Stop articles will be discarded from the click counts. </strong>
+<strong> In the following steps of the analysis the source and target articles will be discarded from the click counts. </strong>
 </blockquote>
 
 </div>

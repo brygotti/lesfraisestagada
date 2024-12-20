@@ -1,3 +1,8 @@
+---
+layout: default
+title: About
+---
+
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
