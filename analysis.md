@@ -453,7 +453,7 @@ As we can see in the plot in figure 13, the player rank is very similar to the P
 
 We were able to show that the Wikipedia graph is accurately representing the world knowledge, and that the countries dominating the web are also the major world powers (i.e. USA, UK, China). Since, the Wikispeedia game is built on Wikipedia, it is biased toward countries producing the most publications. 
 
-Then, we focused on the behavior of players and tried to show that they are intrinsically biased toward some countries. A first naive analysis showed that the player's clicks are strikingly skewed towards the major world. But after scaling and accounting for multiple factors influencing players' behaviors all countries seem to be approximately equally represented in terms of clicks of players. We observe small preferences towards some countries but they are too small to be significant. This indicates that players are mostly biased due to the graph structure but do not have additional intrisic biases. The passive hypothesis is therby validated.
+Then, we focused on the behavior of players and tried to show that they are intrinsically biased toward some countries. A first naive analysis showed that the player's clicks are strikingly skewed towards the major world. But after scaling and accounting for multiple factors influencing players' behaviors all countries seem to be approximately equally represented in terms of clicks of players. We observe small preferences towards some countries but they are too small to be considered for our analysis. This indicates that players are mostly biased due to the graph structure but do not have additional intrisic biases. The passive hypothesis is therby validated.
 
 
 
