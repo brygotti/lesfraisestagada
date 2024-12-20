@@ -36,7 +36,7 @@ This motivates our decision to analyze the Wikispeedia game in terms of countrie
     </div>
     <div class="carousel-item">
       <div class="graph-title"> Figure 2: Connectivity of least clicked articles </div>
-      <iframe class="graph" src="{{ 'graphs/topic_1/least_used_articles_graph.html' | relative_url }}"></iframe>
+      <iframe class="graph" src="{{ 'graphs/topic_1/least_used_articles_graph.html' | relative_url }}" id="connectivity_plot"></iframe>
       <div style="padding: 10px;">
         Legend: Each node represents an article<br/>
         <strong>Node color</strong>: darker if the article is clicked more often in Wikispeedia <br/>
@@ -45,14 +45,21 @@ This motivates our decision to analyze the Wikispeedia game in terms of countrie
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselGraphArticles" data-bs-slide="prev">
+  <button class="carousel-control-prev refresher" type="button" data-bs-target="#carouselGraphArticles" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselGraphArticles" data-bs-slide="next">
+  <button class="carousel-control-next refresher" type="button" data-bs-target="#carouselGraphArticles" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+  <script>
+    document.querySelectorAll('.refresher').forEach((el) => {
+      el.addEventListener('click', () => {
+        document.getElementById('connectivity_plot').src = document.getElementById('connectivity_plot').src
+      });
+    });
+  </script>
 </div>
 </div>
 </div>
@@ -325,17 +332,24 @@ However, it is important to note that we are only accounting for confounders in 
     </div>
     <div class="carousel-item">
       <div class="graph-title"> Figure 12: PageRank difference (Player rank minus PageRank) </div>
-      <iframe class="graph" src="{{ '/graphs/topic_3/rank_diff.html' | relative_url }}" ></iframe>
+      <iframe class="graph" src="{{ '/graphs/topic_3/rank_diff.html' | relative_url }}" id="rank_diff"></iframe>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#pagerank" data-bs-slide="prev">
+  <button class="carousel-control-prev refresher2" type="button" data-bs-target="#pagerank" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#pagerank" data-bs-slide="next">
+  <button class="carousel-control-next refresher2" type="button" data-bs-target="#pagerank" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+  <script>
+    document.querySelectorAll('.refresher2').forEach((el) => {
+      el.addEventListener('click', () => {
+        document.getElementById('rank_diff').src = document.getElementById('rank_diff').src
+      });
+    });
+  </script>
 </div>
 </div>
 </div>
