@@ -271,12 +271,16 @@ What happens when a player’s navigation ends unsuccessfully? By analyzing the 
 
 However, scaling by outgoing links tells a different story. Countries like Greenland, Bolivia, and South Africa emerge as true dead ends, suggesting specific navigational patterns or challenges that lead players to abandon these paths. These insights highlight the limitations of raw data in capturing genuine player behavior.
 
+#### Backtracking Behavior: What Leads Players to Retreat?
+Before players give up, they often hit a point where they backtrack. By examining the most common articles preceding the “go back” action, we identify key friction points. Unsurprisingly, highly connected countries like the United States and the United Kingdom **again** dominate the raw data due to their frequent presence in navigation paths.
+
+However, scaling by outgoing links uncovers, once more, a more nuanced picture. While prominent countries remain significant, others like South Africa, Italy, and Spain also emerge as frequent backtracking points. This highlights specific challenges players face in navigation, where even well-connected or moderately connected countries can become roadblocks, revealing the complexity of player decision-making beyond raw prominence. We observe a relatively similar distribution between last country articles and backtracked country articles, suggesting that the same navigational patterns and challenges that lead players to abandon paths often also influence their decision to retreat, emphasizing the importance of connectivity and link structure in shaping player behavior.
 
 </div>
 </div>
 </div>
 
-<div class="col mb-4" id="plot1">
+<!-- <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
       <div class="graph-title"> Figure 10: Top 10 last articles in unfinished paths: raw vs. scaled occurrences by outgoing links </div>
@@ -287,13 +291,45 @@ However, scaling by outgoing links tells a different story. Countries like Green
 
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
+<div class="content p-4" markdown="1"> -->
+
+
+</div>
+</div>
+</div>
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
+<div class="content">
+<div id="Unfinished_backtrack" class="carousel slide" data-bs-theme="dark">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="graph-title"> Figure 10: Top 10 last articles in unfinished paths: raw vs. scaled occurrences by outgoing links  </div>
+      <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis2.html' | relative_url }}" ></iframe>
+    </div>
+    <div class="carousel-item">
+      <div class="graph-title"> Figure 11: Top 10 articles before backtracking: raw vs. scaled occurrences in unfinished paths</div>
+      <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis3.html' | relative_url }}"></iframe>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#Unfinished_backtrack" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#Unfinished_backtrack" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col mb-4">
+<div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
-#### Backtracking Behavior: What Leads Players to Retreat?
-Before players give up, they often hit a point where they backtrack. By examining the most common articles preceding the “go back” action, we identify key friction points. Unsurprisingly, highly connected countries like the United States and the United Kingdom **again** dominate the raw data due to their frequent presence in navigation paths.
-
-However, scaling by outgoing links uncovers a more nuanced picture. While prominent countries remain significant, others like South Africa, Italy, and Spain also emerge as frequent backtracking points. This highlights specific challenges players face in navigation, where even well-connected or moderately connected countries can become roadblocks, revealing the complexity of player decision-making beyond raw prominence.
-</div>
+<!-- </div>
 </div>
 </div>
 
@@ -304,7 +340,7 @@ However, scaling by outgoing links uncovers a more nuanced picture. While promin
       <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis3.html' | relative_url }}"></iframe>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
