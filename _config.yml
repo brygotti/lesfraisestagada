@@ -10,3 +10,5 @@ navigation:
     url: /preprocessing.html
   - title: Analysis
     url: /analysis.html
+  - title: About
+    url: /about.html
