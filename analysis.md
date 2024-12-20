@@ -194,7 +194,7 @@ To do so, a first naïve approach is simply to detect countries with higher clic
 
 However, a high click count can simply be due to the high number of articles associated to a particular country within the game. This does not necessarily tell us something about player's biases. Therefore, we rather focus on the ratio of click count divided by the number of articles to get a result closer to reality. On <a href="#World_click_count" data-bs-toggle="tooltip">figure 8</a>, we see an overrepresentation of some countries like Vatican city, Brazil, or South Africa which are different from the previous ones. Vatican city is a particular case in this dataset as there is only one article associated with this country so the click count is not influenced by the scaling. It could be considered as an outlier, not necesarilly indicating something about player's biases. Therefore, the scaled click count map indicates that part of a high click count can simply be explained by the high number of articles associated to a particular country. But scaling creates some artefacts like Vatican city so it does not seem to be the best approach. There appear to be another factor influencing the click count per country as some countries remain more represented than other even when considering a scaled version of the click count.
 
-But, can we rationally explain a differentially distributed click count? Are there other factors influcing the click count of player's? Onto the next topic to figure it out!
+But, can we rationally explain a differentially distributed click count? Are there other factors influencing the click count of player's? Onto the next topic to figure it out!
 
 </div>
 </div>
@@ -243,7 +243,7 @@ In this analysis, we will:
 <!-- 4. **Explore the relationship between start/stop countries and back-click rates.** Do certain countries cause players to abandon paths more frequently, and how does this change depending on their position in the navigation sequence? -->
 
 
-#### 1. Spotting Dead Ends Through Click Counts and Mean Failure Ratio
+#### Spotting Dead Ends Through Click Counts and Mean Failure Ratio
 In this part, we sort the countries based on their click count and unique mean failure ratio. To calculate the unique failure ratio, we count each occurrence of a country in unfinished paths only once. This approach eliminates circular patterns and repeated entries, ensuring a clearer and more accurate representation of how often each country contributes to navigation failures.
 
 Uh oh, this plot might be biased. Not only has the United States received an overwhelmingly high number of clicks, but it also has significantly more outgoing links (16,338) than other countries. This likely inflates its visibility and accessibility, making it appear more frequently in player paths. Familiarity bias (e.g., cultural or linguistic factors) further skews the data toward countries like the US and UK.
@@ -266,7 +266,7 @@ To reduce this bias, we scale the number of clicks by the sum of outgoing links 
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
-#### 2. **Analyzing Last Article in Unfinished Paths: Which Countries Trap Players?**
+#### Analyzing Last Article in Unfinished Paths: Which Countries Trap Players?
 What happens when a player’s navigation ends unsuccessfully? By analyzing the last articles in unfinished paths, we identify which countries are the most frequent dead ends. Initially, highly connected countries like the United States dominate this list, reflecting their prominence in raw data.
 
 However, scaling by outgoing links tells a different story. Countries like Greenland, Bolivia, and South Africa emerge as true dead ends, suggesting specific navigational patterns or challenges that lead players to abandon these paths. These insights highlight the limitations of raw data in capturing genuine player behavior.
@@ -289,7 +289,7 @@ However, scaling by outgoing links tells a different story. Countries like Green
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
 
-#### 3. **Backtracking Behavior: What Leads Players to Retreat?**
+#### Backtracking Behavior: What Leads Players to Retreat?
 Before players give up, they often hit a point where they backtrack. By examining the most common articles preceding the “go back” action, we identify key friction points. Unsurprisingly, highly connected countries like the United States and the United Kingdom **again** dominate the raw data due to their frequent presence in navigation paths.
 
 However, scaling by outgoing links uncovers a more nuanced picture. While prominent countries remain significant, others like South Africa, Italy, and Spain also emerge as frequent backtracking points. This highlights specific challenges players face in navigation, where even well-connected or moderately connected countries can become roadblocks, revealing the complexity of player decision-making beyond raw prominence.
