@@ -291,17 +291,24 @@ However, scaling by outgoing links uncovers, once more, a more nuanced picture. 
     </div>
     <div class="carousel-item">
       <div class="graph-title"> Figure 11: Top 10 articles before backtracking: raw vs. scaled occurrences in unfinished paths</div>
-      <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis3.html' | relative_url }}"></iframe>
+      <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis3.html' | relative_url }}" id="daed_end"></iframe>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#Unfinished_backtrack" data-bs-slide="prev">
+  <button class="carousel-control-prev refresher3" type="button" data-bs-target="#Unfinished_backtrack" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#Unfinished_backtrack" data-bs-slide="next">
+  <button class="carousel-control-next refresher3" type="button" data-bs-target="#Unfinished_backtrack" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+  <script>
+    document.querySelectorAll('.refresher3').forEach((el) => {
+      el.addEventListener('click', () => {
+        document.getElementById('daed_end').src = document.getElementById('daed_end').src
+      });
+    });
+  </script>
 </div>
 </div>
 </div>
