@@ -172,8 +172,8 @@ To investigate this we need to look at the finished paths in order to extract so
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 6: Top Countries by Start and Stop Articles in Finished Paths</div>
-      <iframe class="graph" src="{{ '/graphs/topic_2/start_stop_count.html' | relative_url }}"></iframe>
+      <div class="graph-title"> Figure 6: Top countries by source and target articles in finished paths</div>
+      <iframe class="graph" src="{{ '/graphs/topic_2/source_target_count.html' | relative_url }}"></iframe>
     </div>
   </div>
 </div>
@@ -256,7 +256,7 @@ To reduce this bias, we scale the number of clicks by the sum of outgoing links 
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 9: Top 10 Countries by Click Count and Mean Failure Ratio (Scaled vs. Unscaled) </div>
+      <div class="graph-title"> Figure 9: Top 10 countries by click count and mean failure ratio (scaled vs. unscaled) </div>
       <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis1.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -279,7 +279,7 @@ However, scaling by outgoing links tells a different story. Countries like Green
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 10: Top 10 Last Articles in Unfinished Paths: Raw vs. Scaled Occurrences by Outgoing Links </div>
+      <div class="graph-title"> Figure 10: Top 10 last articles in unfinished paths: raw vs. scaled occurrences by outgoing links </div>
       <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis2.html' | relative_url }}"></iframe>
     </div>
   </div>
@@ -300,7 +300,7 @@ However, scaling by outgoing links uncovers a more nuanced picture. While promin
 <div class="col mb-4" id="plot1">
   <div class="card shadow" data-aos="fade-up">
     <div class="content p-4">
-      <div class="graph-title"> Figure 11: Top 10 Articles Before Backtracking: Raw vs. Scaled Occurrences in Unfinished Paths </div>
+      <div class="graph-title"> Figure 11: Top 10 articles before backtracking: raw vs. scaled occurrences in unfinished paths </div>
       <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis3.html' | relative_url }}"></iframe>
     </div>
   </div>
