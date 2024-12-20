@@ -340,13 +340,12 @@ However, scaling by outgoing links uncovers, once more, a more nuanced picture. 
       <iframe class="graph" src="{{ '/graphs/topic_2/dead_ends_analysis3.html' | relative_url }}"></iframe>
     </div>
   </div>
-</div> -->
-
-
+</div>
 
 <div class="col mb-4">
 <div class="card shadow" data-aos="fade-up">
 <div class="content p-4" markdown="1">
+ -->
 
 
 #### Accounting for the influence of the graph
